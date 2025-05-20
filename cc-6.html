@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IaaS Mind Map</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8fbfd;
+      padding: 20px 40px;
+    }
+
+    .mindmap ul {
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+      display: none;
+      position: relative;
+    }
+
+    .mindmap ul.visible {
+      display: block;
+    }
+
+    .mindmap li {
+      margin: 8px 0;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .mindmap li::before {
+      content: '';
+      border-left: 2px solid #bbb;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 8px;
+    }
+
+    .node {
+      background: #e0f7fa;
+      border-radius: 8px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 6px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      max-width: fit-content;
+    }
+
+    .node:hover {
+      background: #b2ebf2;
+    }
+
+    .root {
+      background: #00acc1;
+      color: white;
+      font-weight: bold;
+    }
+
+    .toggle {
+      font-size: 12px;
+      width: 1em;
+      display: inline-block;
+      text-align: center;
+      user-select: none;
+    }
+
+    .spacer {
+      width: 1em;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<h2>💻 Cloud Computing – IaaS (Lecture 6 Mind Map)</h2>
+<div class="mindmap">
+  <ul class="visible">
+    <li>
+      <div class="node root" onclick="toggle(this)">
+        <span class="toggle">►</span> Cloud Computing (IaaS)
+      </div>
+      <ul>
+        <li>
+          <div class="node" onclick="toggle(this)">
+            <span class="toggle">►</span> Problems in Conventional IT
+          </div>
+          <ul>
+            <li><div class="node"><span class="spacer"></span> Peak capacity cost</div></li>
+            <li><div class="node"><span class="spacer"></span> Low agility</div></li>
+            <li><div class="node"><span class="spacer"></span> High maintenance</div></li>
+            <li><div class="node"><span class="spacer"></span> Hardware failure risk</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node" onclick="toggle(this)">
+            <span class="toggle">►</span> Solution: Outsourced IaaS
+          </div>
+          <ul>
+            <li><div class="node"><span class="spacer"></span> On-demand capacity</div></li>
+            <li><div class="node"><span class="spacer"></span> High availability</div></li>
+            <li><div class="node"><span class="spacer"></span> System management</div></li>
+            <li><div class="node"><span class="spacer"></span> Qualified service provider</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node" onclick="toggle(this)">
+            <span class="toggle">►</span> Virtualization
+          </div>
+          <ul>
+            <li><div class="node"><span class="spacer"></span> Virtual Machines (compute)</div></li>
+            <li><div class="node"><span class="spacer"></span> Virtual Storage</div></li>
+            <li><div class="node"><span class="spacer"></span> Virtual Network</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node" onclick="toggle(this)">
+            <span class="toggle">►</span> Key Characteristics
+          </div>
+          <ul>
+            <li>
+              <div class="node" onclick="toggle(this)">
+                <span class="toggle">►</span> Scalability & Elasticity
+              </div>
+              <ul>
+                <li><div class="node"><span class="spacer"></span> Dynamic resource scaling</div></li>
+                <li><div class="node"><span class="spacer"></span> VM auto provisioning</div></li>
+                <li><div class="node"><span class="spacer"></span> System-wide integration</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" onclick="toggle(this)">
+                <span class="toggle">►</span> Availability & Reliability
+              </div>
+              <ul>
+                <li><div class="node"><span class="spacer"></span> Monitoring and backups</div></li>
+                <li><div class="node"><span class="spacer"></span> VM migration</div></li>
+                <li><div class="node"><span class="spacer"></span> Redundancy for disaster recovery</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" onclick="toggle(this)">
+                <span class="toggle">►</span> Manageability & Interoperability
+              </div>
+              <ul>
+                <li><div class="node"><span class="spacer"></span> VM control (create, suspend...)</div></li>
+                <li><div class="node"><span class="spacer"></span> Automated billing</div></li>
+                <li><div class="node"><span class="spacer"></span> Resource monitoring</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" onclick="toggle(this)">
+                <span class="toggle">►</span> Performance & Optimization
+              </div>
+              <ul>
+                <li><div class="node"><span class="spacer"></span> Load balancing</div></li>
+                <li><div class="node"><span class="spacer"></span> Live migration</div></li>
+                <li><div class="node"><span class="spacer"></span> Network-aware deployment</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" onclick="toggle(this)">
+                <span class="toggle">►</span> Accessibility & Portability
+              </div>
+              <ul>
+                <li><div class="node"><span class="spacer"></span> Web-based access</div></li>
+                <li><div class="node"><span class="spacer"></span> No local install needed</div></li>
+                <li><div class="node"><span class="spacer"></span> Standardized VM format</div></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function toggle(el) {
+    event.stopPropagation();
+    const triangle = el.querySelector(".toggle");
+    const nextUl = el.parentElement.querySelector("ul");
+    if (!triangle || !nextUl) return;
+    const isVisible = nextUl.classList.contains("visible");
+    nextUl.classList.toggle("visible");
+    triangle.textContent = isVisible ? "►" : "▼";
+  }
+</script>
+
+</body>
+</html>
