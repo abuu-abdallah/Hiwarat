@@ -4,92 +4,141 @@
   <meta charset="UTF-8" />
   <title>IaaS Mind Map</title>
   <style>
-    body {
-        font-family: Calibri, sans-serif;      
-        font-size: 22px;
-        background: #252833;
-        padding: 20px 40px;
-    }
+/* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Calibri, sans-serif;
+  font-size: 1.2rem;
+  background: #252833;
+  box-sizing: border-box;
+}
 
-    .mindmap ul {
-        list-style: none;
-        padding-left: 20px;
-        margin: 0;
-        overflow: hidden;
-        max-height: 0;
-    }
+#fullscreen-btn {
+  background-color: #0097B1;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#fullscreen-btn:hover {
+  background-color: #FCA105;
+}
 
-    .mindmap ul.visible {
-      display: block;
-    }
+.mindmap {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
 
-    .mindmap li {
-      margin: 16px 0;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .mindmap li::before {
-      content: '';
-      border-left: 2px groove #414A53;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 8px;
-    }
-
-    .node-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-    }
-
-    .node {
-      background: #31423E;
-      border-radius: 8px;
-      padding: 6px 10px;
-      display: inline-block;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-      white-space: nowrap;
-      color: white;
-    }
-
-    .node:hover {
-      background: #41514D;
-    }
-
-    .root {
-      background: #424B54 !important;
-      color: white;
-      font-weight: bold;
-    }
-
-    .toggle {
-      font-size: 12px;
-      user-select: none;
-      color: azure;
-    }
-    .mindmap ul {
+.mindmap ul {
   list-style: none;
-  padding-left: 20px;
+  padding-left: 1rem;
   margin: 0;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 1s ease-out;
+  transition: max-height 0.4s ease;
 }
 
 .mindmap ul.visible {
-  max-height: 1000px; /* Large enough to show nested content */
+  max-height: 1000px;
   transition: max-height 1s ease-in;
 }
+
+.mindmap li {
+  margin: 1rem 0;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.mindmap li::before {
+  content: '';
+  border-left: 2px solid #575a5e;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.5rem;
+}
+
+.node-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.node {
+  background: #31423E;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  color: white;
+  max-width: 100%;
+  word-wrap: break-word;
+  font-size: 1rem;
+}
+
+.node:hover {
+  background: #41514D;
+}
+
+.root {
+  background: #424B54 !important;
+  font-weight: bold;
+}
+
+.toggle {
+  font-size: 0.85rem;
+  user-select: none;
+  color: #31423E;
+}
+
+/* Button container */
+div[style*="text-align: right"] {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .node {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  #fullscreen-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .toggle {
+    font-size: 0.75rem;
+  }
+}
+
 
   </style>
 </head>
 <body>
-
-<h2>💻 Cloud Computing – IaaS (Lecture 6 Mind Map)</h2>
+    <div style="text-align: right; margin-bottom: 7px;">
+        <button id="fullscreen-btn" title="Full screen"><img src="fullscreen.png" alt="Full Screen" height=15px width=15px></button>
+    </div>
 <div class="mindmap">
   <ul class="visible">
     <li>
@@ -219,30 +268,30 @@
       const isVisible = branch.classList.contains("visible");
   
       if (isVisible) {
-        // Collapse with animation
-        const height = branch.scrollHeight;
-        branch.style.maxHeight = height + "px"; // set to current height
+        // Collapse
+        branch.style.maxHeight = branch.scrollHeight + "px"; // ensure it's set first
         requestAnimationFrame(() => {
-          branch.style.transition = "max-height 1s ease-out";
+          branch.style.transition = "max-height 0.4s ease-out";
           branch.style.maxHeight = "0";
         });
-        branch.classList.remove("visible");
         toggleIcon.textContent = "►";
+        branch.classList.remove("visible");
       } else {
-        // Expand with animation
+        // Expand
         branch.classList.add("visible");
         branch.style.maxHeight = "0";
         requestAnimationFrame(() => {
-          branch.style.transition = "max-height 1s ease-in";
-          branch.style.maxHeight = branch.scrollHeight + "px";
+          const scrollHeight = branch.scrollHeight;
+          branch.style.transition = "max-height 0.5s ease-in";
+          branch.style.maxHeight = scrollHeight + "px";
         });
         toggleIcon.textContent = "▼";
       }
   
-      // Clear inline styles after animation
-      branch.addEventListener("transitionend", function cleanup(e) {
+      // Reset after animation
+      branch.addEventListener("transitionend", function cleanup() {
         if (branch.classList.contains("visible")) {
-          branch.style.maxHeight = "none";
+          branch.style.maxHeight = "none"; // let it auto-expand
         } else {
           branch.style.maxHeight = null;
         }
@@ -250,7 +299,30 @@
         branch.removeEventListener("transitionend", cleanup);
       });
     }
+    const btn = document.getElementById('fullscreen-btn');
+      function updateFullscreenButton() {
+        if (document.fullscreenElement) {
+          /*btn.innerHTML = "> <";*/
+          btn.innerHTML = '<img src="exit-fullscreen.png" alt="Full Screen" height=15px width=15px>';
+          btn.title = "Exit Full Screen";
+        } else {
+          btn.innerHTML = '<img src="fullscreen.png" alt="Full Screen" height=15px width=15px>';
+          btn.title = "Full Screen";
+
+        }
+      }
+      
+      btn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else {
+          document.exitFullscreen();
+        }
+      });
+
+      document.addEventListener('fullscreenchange', updateFullscreenButton);
   </script>
+  
   
 
 </body>
