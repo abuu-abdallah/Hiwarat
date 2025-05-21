@@ -5,59 +5,63 @@
   <title>IaaS Mind Map</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f8fbfd;
-      padding: 20px 40px;
+        font-family: Calibri, sans-serif;      
+        font-size: 22px;
+        background: #252833;
+        padding: 20px 40px;
     }
 
     .mindmap ul {
-      list-style: none;
-      padding-left: 20px;
-      margin: 0;
-      display: none;
-      position: relative;
+        list-style: none;
+        padding-left: 20px;
+        margin: 0;
+        overflow: hidden;
+        max-height: 0;
     }
+
 
     .mindmap ul.visible {
       display: block;
     }
 
     .mindmap li {
-      margin: 8px 0;
+      margin: 16px 0;
       position: relative;
       padding-left: 20px;
     }
 
     .mindmap li::before {
       content: '';
-      border-left: 2px solid #bbb;
+      border-left: 2px groove #414A53;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 8px;
     }
 
-    .node {
-      background: #e0f7fa;
-      border-radius: 8px;
-      padding: 6px 10px;
+    .node-wrapper {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 8px;
       cursor: pointer;
-      gap: 6px;
+    }
+
+    .node {
+      background: #31423E;
+      border-radius: 8px;
+      padding: 6px 10px;
+      display: inline-block;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-      max-width: 100%;
-      width: fit-content;
-      min-width: 250px;
+      white-space: nowrap;
+      color: white;
     }
 
     .node:hover {
-      background: #b2ebf2;
+      background: #41514D;
     }
 
     .root {
-      background: #00acc1;
+      background: #424B54 !important;
       color: white;
       font-weight: bold;
     }
@@ -65,12 +69,22 @@
     .toggle {
       font-size: 12px;
       user-select: none;
+      color: azure;
     }
+    .mindmap ul {
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s ease-out;
+}
 
-    .spacer {
-      width: 1em;
-      display: inline-block;
-    }
+.mindmap ul.visible {
+  max-height: 1000px; /* Large enough to show nested content */
+  transition: max-height 1s ease-in;
+}
+
   </style>
 </head>
 <body>
@@ -79,112 +93,112 @@
 <div class="mindmap">
   <ul class="visible">
     <li>
-      <div class="node root" onclick="toggle(this)">
-        <span>Cloud Computing (IaaS)</span>
+      <div class="node-wrapper" onclick="toggle(this)">
+        <div class="node root">Cloud Computing (IaaS)</div>
         <span class="toggle">►</span>
       </div>
       <ul>
         <li>
-          <div class="node" onclick="toggle(this)">
-            <span>Problems in Conventional IT</span>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Problems in Conventional IT</div>
             <span class="toggle">►</span>
           </div>
           <ul>
-            <li><div class="node"><span>Peak capacity cost</span></div></li>
-            <li><div class="node"><span>Low agility</span></div></li>
-            <li><div class="node"><span>High maintenance</span></div></li>
-            <li><div class="node"><span>Hardware failure risk</span></div></li>
+            <li><div class="node">Peak capacity cost</div></li>
+            <li><div class="node">Low agility</div></li>
+            <li><div class="node">High maintenance</div></li>
+            <li><div class="node">Hardware failure risk</div></li>
           </ul>
         </li>
 
         <li>
-          <div class="node" onclick="toggle(this)">
-            <span>Solution: Outsourced IaaS</span>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Solution: Outsourced IaaS</div>
             <span class="toggle">►</span>
           </div>
           <ul>
-            <li><div class="node"><span>On-demand capacity</span></div></li>
-            <li><div class="node"><span>High availability</span></div></li>
-            <li><div class="node"><span>System management</span></div></li>
-            <li><div class="node"><span>Qualified service provider</span></div></li>
+            <li><div class="node">On-demand capacity</div></li>
+            <li><div class="node">High availability</div></li>
+            <li><div class="node">System management</div></li>
+            <li><div class="node">Qualified service provider</div></li>
           </ul>
         </li>
 
         <li>
-          <div class="node" onclick="toggle(this)">
-            <span>Virtualization</span>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Virtualization</div>
             <span class="toggle">►</span>
           </div>
           <ul>
-            <li><div class="node"><span>Virtual Machines (compute)</span></div></li>
-            <li><div class="node"><span>Virtual Storage</span></div></li>
-            <li><div class="node"><span>Virtual Network</span></div></li>
+            <li><div class="node">Virtual Machines (compute)</div></li>
+            <li><div class="node">Virtual Storage</div></li>
+            <li><div class="node">Virtual Network</div></li>
           </ul>
         </li>
 
         <li>
-          <div class="node" onclick="toggle(this)">
-            <span>Key Characteristics</span>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Key Characteristics</div>
             <span class="toggle">►</span>
           </div>
           <ul>
             <li>
-              <div class="node" onclick="toggle(this)">
-                <span>Scalability & Elasticity</span>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Scalability & Elasticity</div>
                 <span class="toggle">►</span>
               </div>
               <ul>
-                <li><div class="node"><span>Dynamic resource scaling</span></div></li>
-                <li><div class="node"><span>VM auto provisioning</span></div></li>
-                <li><div class="node"><span>System-wide integration</span></div></li>
+                <li><div class="node">Dynamic resource scaling</div></li>
+                <li><div class="node">VM auto provisioning</div></li>
+                <li><div class="node">System-wide integration</div></li>
               </ul>
             </li>
 
             <li>
-              <div class="node" onclick="toggle(this)">
-                <span>Availability & Reliability</span>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Availability & Reliability</div>
                 <span class="toggle">►</span>
               </div>
               <ul>
-                <li><div class="node"><span>Monitoring and backups</span></div></li>
-                <li><div class="node"><span>VM migration</span></div></li>
-                <li><div class="node"><span>Redundancy for disaster recovery</span></div></li>
+                <li><div class="node">Monitoring and backups</div></li>
+                <li><div class="node">VM migration</div></li>
+                <li><div class="node">Redundancy for disaster recovery</div></li>
               </ul>
             </li>
 
             <li>
-              <div class="node" onclick="toggle(this)">
-                <span>Manageability & Interoperability</span>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Manageability & Interoperability</div>
                 <span class="toggle">►</span>
               </div>
               <ul>
-                <li><div class="node"><span>VM control (create, suspend...)</span></div></li>
-                <li><div class="node"><span>Automated billing</span></div></li>
-                <li><div class="node"><span>Resource monitoring</span></div></li>
+                <li><div class="node">VM control (create, suspend...)</div></li>
+                <li><div class="node">Automated billing</div></li>
+                <li><div class="node">Resource monitoring</div></li>
               </ul>
             </li>
 
             <li>
-              <div class="node" onclick="toggle(this)">
-                <span>Performance & Optimization</span>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Performance & Optimization</div>
                 <span class="toggle">►</span>
               </div>
               <ul>
-                <li><div class="node"><span>Load balancing</span></div></li>
-                <li><div class="node"><span>Live migration</span></div></li>
-                <li><div class="node"><span>Network-aware deployment</span></div></li>
+                <li><div class="node">Load balancing</div></li>
+                <li><div class="node">Live migration</div></li>
+                <li><div class="node">Network-aware deployment</div></li>
               </ul>
             </li>
 
             <li>
-              <div class="node" onclick="toggle(this)">
-                <span>Accessibility & Portability</span>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Accessibility & Portability</div>
                 <span class="toggle">►</span>
               </div>
               <ul>
-                <li><div class="node"><span>Web-based access</span></div></li>
-                <li><div class="node"><span>No local install needed</span></div></li>
-                <li><div class="node"><span>Standardized VM format</span></div></li>
+                <li><div class="node">Web-based access</div></li>
+                <li><div class="node">No local install needed</div></li>
+                <li><div class="node">Standardized VM format</div></li>
               </ul>
             </li>
 
@@ -196,16 +210,48 @@
 </div>
 
 <script>
-  function toggle(el) {
-    event.stopPropagation();
-    const triangle = el.querySelector(".toggle");
-    const siblingUl = el.parentElement.querySelector("ul");
-    if (!triangle || !siblingUl) return;
-    const isVisible = siblingUl.classList.contains("visible");
-    siblingUl.classList.toggle("visible");
-    triangle.textContent = isVisible ? "►" : "▼";
-  }
-</script>
+    function toggle(wrapper) {
+      event.stopPropagation();
+      const toggleIcon = wrapper.querySelector(".toggle");
+      const branch = wrapper.parentElement.querySelector("ul");
+      if (!branch || !toggleIcon) return;
+  
+      const isVisible = branch.classList.contains("visible");
+  
+      if (isVisible) {
+        // Collapse with animation
+        const height = branch.scrollHeight;
+        branch.style.maxHeight = height + "px"; // set to current height
+        requestAnimationFrame(() => {
+          branch.style.transition = "max-height 1s ease-out";
+          branch.style.maxHeight = "0";
+        });
+        branch.classList.remove("visible");
+        toggleIcon.textContent = "►";
+      } else {
+        // Expand with animation
+        branch.classList.add("visible");
+        branch.style.maxHeight = "0";
+        requestAnimationFrame(() => {
+          branch.style.transition = "max-height 1s ease-in";
+          branch.style.maxHeight = branch.scrollHeight + "px";
+        });
+        toggleIcon.textContent = "▼";
+      }
+  
+      // Clear inline styles after animation
+      branch.addEventListener("transitionend", function cleanup(e) {
+        if (branch.classList.contains("visible")) {
+          branch.style.maxHeight = "none";
+        } else {
+          branch.style.maxHeight = null;
+        }
+        branch.style.transition = "";
+        branch.removeEventListener("transitionend", cleanup);
+      });
+    }
+  </script>
+  
 
 </body>
 </html>
