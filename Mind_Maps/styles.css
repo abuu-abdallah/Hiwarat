@@ -1,0 +1,160 @@
+.mindmap {
+    transform-origin: 0 0;
+    transition: transform 0.2s ease;
+    position: absolute;
+    min-width: 100%; /* Ensure it fills container */
+    padding: 20px; /* Add some breathing room */
+    /*height: 10000px;*/
+
+  }
+  #zoom-in-btn, #zoom-out-btn {
+      background-color: #0097B1;
+      color: white;
+      font-size: 18px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-left: 10px;
+  }
+
+#zoom-in-btn:hover, #zoom-out-btn:hover {
+background-color: #FCA105;
+}
+
+  #zoom-container {
+    overflow: auto; /* Changed from hidden to auto */
+    width: 100%;
+    /*height: calc(100vh - 100px); /* Adjust based on your header height */
+    height: 10000px;
+    position: relative;
+    cursor: grab; 
+    background-color: #252833; /* Match body background */
+  }
+#zoom-container.dragging {
+cursor: grabbing;
+}
+
+
+
+  #fullscreen-btn {
+    background-color: #0097B1;
+    /*color: #252833;*/
+    position: right;
+    align-items: right;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  #fullscreen-btn:hover {
+    background-color: #FCA105;
+  }
+  html, body {
+      height: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto; /* ensures vertical scrolling */
+  }
+  
+
+  body {
+      font-family: Calibri, sans-serif;      
+      font-size: 22px;
+      background: #252833;
+      height: 100%;
+      padding: 20px 40px;
+      /*box-sizing: border-box;*/
+
+  }
+
+  .mindmap ul {
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 1s ease;
+  }
+
+
+  .mindmap ul.visible {
+    display: block;
+  }
+
+  .mindmap li {
+    margin: 16px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .mindmap li::before {
+    content: '';
+    border-left: 2px solid #575a5e;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 8px;
+  }
+
+  .node-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  /*.node {
+background: #31423E; /* Default fallback *
+border-radius: 8px;
+padding: 6px 10px;
+display: inline-block;
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+white-space: nowrap;
+color: white;
+transition: background 0.3s ease;
+}*/
+.node {
+    background: #31423E;
+    border-radius: 8px;
+    padding: 6px 10px;
+    display: inline-block;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+    color: white;
+    text-shadow: 1px 1px 2px black; /* <-- added */
+  }
+  
+
+  .node:hover {
+    background: #41514D;
+  }
+
+  .root {
+    background: #424B54 !important;
+    color: white;
+    font-weight: bold;
+  }
+
+  .toggle {
+    font-size: 12px;
+    user-select: none;
+    color: #31423E;
+  }
+  .mindmap ul {
+list-style: none;
+padding-left: 20px;
+margin: 0;
+overflow: hidden;
+max-height: 0;
+transition: max-height 1s ease-out;
+}
+
+.mindmap ul.visible {
+max-height: 1000px; /* Large enough to show nested content */
+transition: max-height 1s ease-in;
+}

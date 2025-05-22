@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Cloud Computing</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">What is Computing?</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Goal-oriented computer use</div></li>
+                <li><div class="node">Includes hardware/software design</div></li>
+                <li><div class="node">Data processing & management</div></li>
+                <li><div class="node">Scientific studies</div></li>
+                <li><div class="node">Intelligent systems</div></li>
+                <li><div class="node">Communication & media</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Computing as the 5th Utility</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Water</div></li>
+                <li><div class="node">Electricity</div></li>
+                <li><div class="node">Natural Gas</div></li>
+                <li><div class="node">Telephone Network</div></li>
+                <li><div class="node">Computing</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Utility Computing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Essential computing services</div></li>
+                <li><div class="node">Service-based access model</div></li>
+                <li><div class="node">Metered usage</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Improving Performance</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Work Harder: Faster hardware</div></li>
+                <li><div class="node">Work Smarter: Optimized algorithms</div></li>
+                <li><div class="node">Get Help: Use multiple computers</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Distributed Computing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Interconnected computers share tasks</div></li>
+                <li><div class="node">Supports computing as utility vision</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Computing Paradigms</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Cluster Computing</div></li>
+                <li><div class="node">Grid Computing</div></li>
+                <li><div class="node">Cloud Computing</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Cluster Computing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Multiple nodes act as one system</div></li>
+                <li><div class="node">Connected via LAN or cabinet</div></li>
+                <li><div class="node">Cost-effective performance</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Grid Computing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Resource sharing model</div></li>
+                <li><div class="node">Heterogeneous & distributed resources</div></li>
+                <li><div class="node">Solves large-scale problems</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Cloud Computing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Metaphor for Internet</div></li>
+                <li><div class="node">Abstraction of backend complexity</div></li>
+                <li><div class="node">Simple UI with auto resource provisioning</div></li>
+                <li><div class="node">Massive scalability</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Cloud Computing in Math</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">1: Integrated environment</div></li>
+                <li><div class="node">0: Zero management</div></li>
+                <li><div class="node">∞: Endless possibilities</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Cloud Computing in IT</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Improves business performance</div></li>
+                <li><div class="node">Invisible to user device</div></li>
+                <li><div class="node">Unbounded scale & quality</div></li>
+                <li><div class="node">Fosters innovation</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
