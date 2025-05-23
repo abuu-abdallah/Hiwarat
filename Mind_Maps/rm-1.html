@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+  <ul class="visible">
+    <li>
+      <div class="node-wrapper" onclick="toggle(this)">
+        <div class="node root">المعرفة والعلم</div>
+        <span class="toggle">►</span>
+      </div>
+      <ul>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">مخرجات التعلم</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">يعرف المعرفة</div></li>
+            <li><div class="node">يعدد أقسام المعرفة</div></li>
+            <li><div class="node">يذكر مصادر المعرفة</div></li>
+            <li><div class="node">يعرف العلم</div></li>
+            <li><div class="node">يبين خصائص العلم</div></li>
+            <li><div class="node">يعدد أهداف العلم</div></li>
+            <li><div class="node">يفرق بين العلم والمعرفة</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">مقدمة البحث العلمي</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">وسيلة للرقي واكتساب المعرفة</div></li>
+            <li><div class="node">حل مشكلات الشعوب</div></li>
+            <li><div class="node">منهجية ضرورية للبحوث الأكاديمية</div></li>
+            <li><div class="node">اكتساب مهارات بحثية</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">تعريف المعرفة</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">المعلومات والفهم من التعلم أو التجربة</div></li>
+            <li><div class="node">فهم نظري أو علمي لموضوع</div></li>
+            <li><div class="node">حقائق ومعلومات من الواقع</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">أنواع المعرفة</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">معرفة فطرية</div></li>
+            <li><div class="node">معرفة مكتسبة</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">أنواع المعرفة حسب الوسائل</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">معرفة حسية</div></li>
+            <li><div class="node">معرفة عقلية تأملية</div></li>
+            <li><div class="node">معرفة علمية تجريبية</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">طرق الحصول على المعرفة</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">الصدفة</div></li>
+            <li><div class="node">الخبرة</div></li>
+            <li><div class="node">التجربة والخطأ</div></li>
+            <li><div class="node">التفكير العلمي</div></li>
+            <li><div class="node">البحث العلمي</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">خصائص المعرفة العلمية</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">دقة الصياغة</div></li>
+            <li><div class="node">قابلة للتعميم</div></li>
+            <li><div class="node">قابلة للاختبار</div></li>
+            <li><div class="node">الموضوعية</div></li>
+            <li><div class="node">التحليل</div></li>
+            <li><div class="node">تكامل واتصال المعارف</div></li>
+            <li><div class="node">تسليم ببعض المبادئ</div></li>
+            <li><div class="node">البناء النسقي للحقائق</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">مفهوم العلم</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">جهد إنساني منهجي</div></li>
+            <li><div class="node">عملية إنتاج معرفي</div></li>
+            <li><div class="node">معارف ثابتة وفق مبادئ</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">أهداف العلم</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">فهم الظواهر</div></li>
+            <li><div class="node">التعميم</div></li>
+            <li><div class="node">التنبؤ</div></li>
+            <li><div class="node">التحكم والضبط</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">الفرق بين العلم والمعرفة</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">المعرفة أوسع من العلم</div></li>
+            <li><div class="node">العلم جزء من المعرفة</div></li>
+            <li><div class="node">المعرفة لا تشترط المنهج</div></li>
+            <li><div class="node">العلم يتميز بالتحقق والتجريب</div></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
