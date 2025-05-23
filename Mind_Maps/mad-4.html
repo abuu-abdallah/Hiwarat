@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+  <ul class="visible">
+    <li>
+      <div class="node-wrapper" onclick="toggle(this)">
+        <div class="node root">Intent</div>
+        <span class="toggle">►</span>
+      </div>
+      <ul>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Activities</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">UI component of Android apps</div></li>
+            <li><div class="node">Interact with users</div></li>
+            <li><div class="node">No main() function like typical Java apps</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Linking Activities</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Use intents to navigate between activities</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Intent Use Cases</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Start an activity</div></li>
+            <li><div class="node">Start a service</div></li>
+            <li><div class="node">Deliver a broadcast</div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Types of Intents</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Explicit Intents</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Specify component by class name</div></li>
+                <li><div class="node">Used within the same app</div></li>
+                <li><div class="node">Example: startActivity to launch new screen</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Implicit Intents</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">No specific component specified</div></li>
+                <li><div class="node">Action declared, handled by any capable app</div></li>
+                <li><div class="node">Example: view map using Google Maps</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Building an Intent</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Component Name</div></li>
+            <li><div class="node">Action (e.g., ACTION_VIEW, ACTION_SEND)</div></li>
+            <li><div class="node">Data (e.g., URI)</div></li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Extras</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Key-value pairs (putExtra)</div></li>
+                <li><div class="node">Bundles for multiple values (putExtras)</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Examples</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Explicit Intent Example</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Send "Hello" to SecondActivity</div></li>
+                <li><div class="node">Display message in TextView</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Implicit Intent Example</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">ACTION_DIAL to open dialer with phone number</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
