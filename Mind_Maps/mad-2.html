@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+  <ul class="visible">
+    <li>
+      <div class="node-wrapper" onclick="toggle(this)">
+        <div class="node root">Android OS and Architecture</div>
+        <span class="toggle">►</span>
+      </div>
+      <ul>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">API Overview</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Set of routines & protocols</div></li>
+            <li><div class="node">Used in GUI components</div></li>
+            <li><div class="node">Requires key for usage</div></li>
+            <li><div class="node">Acts as endpoint URL</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Frontend vs Backend</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Frontend: UI/UX (Kotlin/Java)</div></li>
+            <li><div class="node">Backend: Logic & DB (Node.js, Python)</div></li>
+            <li><div class="node">Linked via APIs</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Example App: FoodieFinder</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Find restaurants</div></li>
+            <li><div class="node">View menus</div></li>
+            <li><div class="node">Place orders</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">API Functions</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Bridge between frontend & backend</div></li>
+            <li><div class="node">Follows REST (GET, POST, etc.)</div></li>
+            <li><div class="node">Returns JSON/XML</div></li>
+            <li><div class="node">Prevents direct DB access</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Android Market Overview</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">75.9% share in 2017</div></li>
+            <li><div class="node">~4 billion users by 2025</div></li>
+            <li><div class="node">Competes with iOS</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Android Versions</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Named after desserts</div></li>
+            <li><div class="node">1.0 (2008) to 16/BakLava (2025)</div></li>
+            <li><div class="node">API levels increment over time</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Android Device Types</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Phones & Tablets</div></li>
+            <li><div class="node">Smart TVs, Watches, Glasses</div></li>
+            <li><div class="node">Home Appliances</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Android Architecture</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Applications</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Phone, SMS, Calendar</div></li>
+                <li><div class="node">Maps, Browser, Contacts</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Application Framework</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Provides standard APIs</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Libraries</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Media, System C, OpenGL | ES</div></li>
+                <li><div class="node">SQLite</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Android Runtime</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Dalvik VM</div></li>
+                <li><div class="node">Java core libraries</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Linux Kernel</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Process, Memory Mgmt</div></li>
+                <li><div class="node">Drivers, Security</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+</div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+  <ul class="visible">
+    <li>
+      <div class="node-wrapper" onclick="toggle(this)">
+        <div class="node root">Mobile Application Development</div>
+        <span class="toggle">►</span>
+      </div>
+      <ul>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Introduction</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">What is an App?</div></li>
+            <li><div class="node">Project suitability factors</div></li>
+            <li><div class="node">Target audience is key</div></li>
+            <li><div class="node">Finalize requirements before development</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Platform</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Android (Google)</div></li>
+            <li><div class="node">iOS (Apple)</div></li>
+            <li><div class="node">HarmonyOS (Huawei)</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Framework</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Android SDK</div></li>
+            <li><div class="node">SwiftUI / UIKit</div></li>
+            <li><div class="node">Flutter</div></li>
+            <li><div class="node">React Native</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Technology</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Languages: Java, Kotlin, Swift, Dart, JS</div></li>
+            <li><div class="node">Tools: Android Studio, Xcode, Firebase</div></li>
+            <li><div class="node">Databases: SQLite, Room, Realm</div></li>
+            <li><div class="node">Architectures: MVVM, MVC</div></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">App Formats</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Native Apps</div></li>
+            <li><div class="node">Mobile Web Apps</div></li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Format Comparison</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Cross-platform: Web apps preferred</div></li>
+                <li><div class="node">Integration: Web apps better</div></li>
+                <li><div class="node">Sales: Native apps preferred</div></li>
+                <li><div class="node">Hardware Access: Native apps better</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Pros & Cons</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Native: Fast, native UI, device access</div></li>
+                <li><div class="node">Web: Platform independent, less storage</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Mobile OS</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Optimized for device constraints</div></li>
+            <li><div class="node">Handles communication & battery</div></li>
+            <li><div class="node">Includes interface & sync features</div></li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Features</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Multitasking, Scheduling</div></li>
+                <li><div class="node">Security, I/O, Multimedia</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Structure</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Hardware & Drivers</div></li>
+                <li><div class="node">Kernel & Libraries</div></li>
+                <li><div class="node">Applications</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">OS Examples</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Java ME, Palm OS</div></li>
+                <li><div class="node">Symbian, Windows Mobile</div></li>
+                <li><div class="node">BlackBerry, iOS, Android</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node">Android OS</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li><div class="node">Developed by Open Handset Alliance</div></li>
+            <li><div class="node">Built on Linux</div></li>
+            <li><div class="node">Acquired from Android Inc. in 2005</div></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
