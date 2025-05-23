@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OS Lecture 5 - CPU Scheduling</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">CPU Scheduling</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Basic Concepts</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">CPU–I/O Burst Cycle</div></li>
+                <li><div class="node">I/O-bound vs CPU-bound processes</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">CPU Scheduler</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Ready queue management</div></li>
+                <li><div class="node">Short-term scheduler</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Scheduling Types</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Preemptive</div></li>
+                <li><div class="node">Nonpreemptive</div></li>
+                <li><div class="node">4 Decision Points</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Dispatcher</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Switching context</div></li>
+                <li><div class="node">Dispatch latency</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Scheduling Criteria</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">CPU Utilization</div></li>
+                <li><div class="node">Throughput</div></li>
+                <li><div class="node">Turnaround Time</div></li>
+                <li><div class="node">Waiting Time</div></li>
+                <li><div class="node">Response Time</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Scheduling Algorithms</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">FCFS (First-Come, First-Served)</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Nonpreemptive</div></li>
+                    <li><div class="node">Convoy effect</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">SJF (Shortest Job First)</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Nonpreemptive & Preemptive (SRTF)</div></li>
+                    <li><div class="node">Optimal avg. waiting time</div></li>
+                    <li><div class="node">Requires CPU burst prediction</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Priority Scheduling</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Preemptive or Nonpreemptive</div></li>
+                    <li><div class="node">Starvation problem</div></li>
+                    <li><div class="node">Solution: Aging</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Round Robin (RR)</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Preemptive, time quantum based</div></li>
+                    <li><div class="node">Fairness for all processes</div></li>
+                    <li><div class="node">Performance depends on quantum size</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Algorithm Evaluation</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Evaluation criteria</div></li>
+                <li><div class="node">Deterministic modeling</div></li>
+                <li><div class="node">Compare FCFS, SJF, RR</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

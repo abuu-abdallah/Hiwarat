@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OS Lecture 4 - Interprocess Communication</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Processes (2)</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Cooperating Processes</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Information sharing</div></li>
+                <li><div class="node">Computation speedup</div></li>
+                <li><div class="node">Modularity</div></li>
+                <li><div class="node">Convenience</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">IPC Models</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Shared Memory</div></li>
+                <li><div class="node">Message Passing</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Shared Memory</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Shared region for communication</div></li>
+                <li><div class="node">User-managed synchronization</div></li>
+                <li><div class="node">Producer-Consumer problem</div></li>
+                <li><div class="node">Unbounded vs Bounded buffer</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Message Passing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">send(message), receive(message)</div></li>
+                <li><div class="node">No shared memory needed</div></li>
+                <li><div class="node">Physical and logical links</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Direct Communication</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Processes name each other explicitly</div></li>
+                <li><div class="node">One link per process pair</div></li>
+                <li><div class="node">Usually bi-directional</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Indirect Communication</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Uses mailboxes/ports</div></li>
+                <li><div class="node">Processes share mailbox</div></li>
+                <li><div class="node">send(mailbox, message)</div></li>
+                <li><div class="node">receive(mailbox, message)</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Mailbox Sharing Issues</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Multiple receivers possible</div></li>
+                <li><div class="node">System selects receiver arbitrarily</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Synchronization</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Blocking (Synchronous)</div></li>
+                <li><div class="node">Non-blocking (Asynchronous)</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Examples of IPC Systems</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">POSIX Shared Memory</div></li>
+                <li><div class="node">Mach: Message-based</div></li>
+                <li><div class="node">Windows: LPC facility</div></li>
+                <li><div class="node">UNIX: Pipes (Ordinary & Named)</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Client-Server Communication</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Sockets</div></li>
+                <li><div class="node">Remote Procedure Calls (RPC)</div></li>
+                <li><div class="node">Remote Method Invocation (RMI)</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

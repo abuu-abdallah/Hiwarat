@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OS Lecture 3 - Processes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Processes (1)</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Process Concept</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Program in execution</div></li>
+                <li><div class="node">Text section, stack, heap</div></li>
+                <li><div class="node">Multiple users may run same program</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Process States</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">New</div></li>
+                <li><div class="node">Running</div></li>
+                <li><div class="node">Waiting</div></li>
+                <li><div class="node">Ready</div></li>
+                <li><div class="node">Terminated</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Process Control Block (PCB)</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Process state</div></li>
+                <li><div class="node">Program counter</div></li>
+                <li><div class="node">CPU registers & scheduling info</div></li>
+                <li><div class="node">Memory & I/O info</div></li>
+                <li><div class="node">Accounting info</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Process Scheduling</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Job queue</div></li>
+                <li><div class="node">Ready queue</div></li>
+                <li><div class="node">Device queues</div></li>
+                <li><div class="node">Scheduler selects next process</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Schedulers</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Short-term (CPU scheduler)</div></li>
+                <li><div class="node">Long-term (job scheduler)</div></li>
+                <li><div class="node">I/O-bound vs CPU-bound</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Context Switch</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Saves current state</div></li>
+                <li><div class="node">Loads saved state</div></li>
+                <li><div class="node">Overhead process</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Process Creation</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Parent creates children</div></li>
+                <li><div class="node">PID based management</div></li>
+                <li><div class="node">Resource & execution options</div></li>
+                <li><div class="node">fork() and exec()</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Process Termination</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">exit(), wait(), abort()</div></li>
+                <li><div class="node">Orphan and zombie processes</div></li>
+                <li><div class="node">init process handles orphans</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

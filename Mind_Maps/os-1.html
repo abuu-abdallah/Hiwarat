@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OS Lecture 1 - Introduction</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Operating Systems - Introduction</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Software Types</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">System Software (OS, Utilities)</div></li>
+                <li><div class="node">Application Software (Business, Multimedia, etc.)</div></li>
+                <li><div class="node">Driver Programs (Device Communication)</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">What is an Operating System?</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Interface between User and Hardware</div></li>
+                <li><div class="node">Goals: Convenience, Efficiency, Protection</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Computer System Structure</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Hardware</div></li>
+                <li><div class="node">Operating System</div></li>
+                <li><div class="node">Application Programs</div></li>
+                <li><div class="node">Users</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">OS Services</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Program Development & Execution</div></li>
+                <li><div class="node">I/O & File Access</div></li>
+                <li><div class="node">System Access, Error Detection</div></li>
+                <li><div class="node">Accounting, Resource Allocation</div></li>
+                <li><div class="node">Protection & Security</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">OS Responsibilities</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Resource Manager</div></li>
+                <li><div class="node">Control Program</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">OS Functions</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Resource Management</div></li>
+                <li><div class="node">User Interface</div></li>
+                <li><div class="node">Run Applications</div></li>
+                <li><div class="node">Built-in Utilities</div></li>
+                <li><div class="node">Hardware Control</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">OS Components</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Process Management</div></li>
+                <li><div class="node">Memory Management</div></li>
+                <li><div class="node">I/O Management</div></li>
+                <li><div class="node">File System</div></li>
+                <li><div class="node">Protection & Security</div></li>
+                <li><div class="node">Network Management & Services</div></li>
+                <li><div class="node">Peripherals & UI</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Devices with OS</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Computers, Mobiles, TVs</div></li>
+                <li><div class="node">Game Consoles, ATMs, POS</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Devices without OS</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Speed Meters, Digital Watches</div></li>
+                <li><div class="node">Microwave, Washing Machines</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Operating System Examples</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Windows, MacOS, Linux, Unix</div></li>
+                <li><div class="node">iOS, Android, Chrome OS</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Kernel</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Core in main memory</div></li>
+                <li><div class="node">Manages hardware/software resources</div></li>
+                <li><div class="node">Runs always</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

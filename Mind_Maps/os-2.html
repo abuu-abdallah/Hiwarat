@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OS Lecture 2 - Services and Structures</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Services and Structures (1)</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+        
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">OS Services for Users</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">User Interface (CLI, GUI, Batch)</div></li>
+                <li><div class="node">Program Execution</div></li>
+                <li><div class="node">I/O Operations</div></li>
+                <li><div class="node">File System Manipulation</div></li>
+                <li><div class="node">Communication (Shared Memory, Messaging)</div></li>
+                <li><div class="node">Error Detection</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">OS Services for Efficiency</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Resource Allocation</div></li>
+                <li><div class="node">Accounting</div></li>
+                <li><div class="node">Protection and Security</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">System Calls</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">API Interface (Win32, POSIX, Java)</div></li>
+                <li><div class="node">Example: File Copy</div></li>
+                <li><div class="node">API → System Call → Kernel</div></li>
+                <li><div class="node">Library Call (e.g., printf → write)</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Parameter Passing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Registers</div></li>
+                <li><div class="node">Memory Block (Linux, Solaris)</div></li>
+                <li><div class="node">Stack</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Types of System Calls</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Process Control</div></li>
+                <li><div class="node">File Management</div></li>
+                <li><div class="node">Device Management</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">OS Structures</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Simple (MS-DOS)</div></li>
+                <li><div class="node">UNIX (Monolithic)</div></li>
+                <li><div class="node">Layered Approach (THE)</div></li>
+                <li><div class="node">Microkernel (Mach)</div></li>
+                <li><div class="node">Modules (Solaris, Linux)</div></li>
+                <li><div class="node">Hybrid (Mac OS X, Android)</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Layered Approach</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Layer 0: Hardware</div></li>
+                <li><div class="node">Layer N: User Interface</div></li>
+                <li><div class="node">Each Layer Builds on Lower One</div></li>
+                <li><div class="node">Debugging Simplicity vs. Efficiency</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Modules</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Kernel Core + Dynamic Services</div></li>
+                <li><div class="node">Object-Oriented Approach</div></li>
+                <li><div class="node">Flexible Interfaces</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Android Architecture</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Open-source</div></li>
+                <li><div class="node">Java-based API</div></li>
+                <li><div class="node">Wide Hardware Support</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
