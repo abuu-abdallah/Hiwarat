@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 5</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Cloud Benefits</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Cloud Benefits</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Enterprise Benefits</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Reduce Initial Investment</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Avoid infrastructure ownership</div></li>
+                        <li><div class="node">Faster time to market</div></li>
+                        <li><div class="node">Lower risk of failed investment</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Reduce Capital Expenditure</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">No in-house IT team required</div></li>
+                        <li><div class="node">Pay-as-you-use model</div></li>
+                        <li><div class="node">Faster reconfiguration & upgrades</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Improve Industrial Specialization</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Focus on core business</div></li>
+                        <li><div class="node">Cloud providers ensure IT performance</div></li>
+                        <li><div class="node">Reduces resource waste</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Improve Resource Utilization</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Centralized management</div></li>
+                        <li><div class="node">Performance-optimized infrastructure</div></li>
+                        <li><div class="node">Shared usage improves efficiency</div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">End User Benefits</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Reduce Local Computing Power</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Use cloud resources remotely</div></li>
+                        <li><div class="node">Only basic hardware required</div></li>
+                        <li><div class="node">Apps accessible from anywhere</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Reduce Local Storage Power</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Data stored in the cloud</div></li>
+                        <li><div class="node">Dynamic allocation of storage</div></li>
+                        <li><div class="node">Consistency and backup handled by cloud</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Variety of End Devices</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Smart devices access cloud</div></li>
+                        <li><div class="node">Mobile access to computing power</div></li>
+                        <li><div class="node">Cloud handles heavy tasks for devices</div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

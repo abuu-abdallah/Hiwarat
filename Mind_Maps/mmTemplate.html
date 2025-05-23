@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Cloud Computing (IaaS)</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Problems in Conventional IT</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Peak capacity cost</div></li>
+                <li><div class="node">Low agility</div></li>
+                <li><div class="node">High maintenance</div></li>
+                <li><div class="node">Hardware failure risk</div></li>
+              </ul>
+            </li>
+    
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Solution: Outsourced IaaS</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">On-demand capacity</div></li>
+                <li><div class="node">High availability</div></li>
+                <li><div class="node">System management</div></li>
+                <li><div class="node">Qualified service provider</div></li>
+              </ul>
+            </li>
+    
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Virtualization</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Virtual Machines (compute)</div></li>
+                <li><div class="node">Virtual Storage</div></li>
+                <li><div class="node">Virtual Network</div></li>
+              </ul>
+            </li>
+    
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Key Characteristics</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Scalability & Elasticity</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Dynamic resource scaling</div></li>
+                    <li><div class="node">VM auto provisioning</div></li>
+                    <li><div class="node">System-wide integration</div></li>
+                  </ul>
+                </li>
+    
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Availability & Reliability</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Monitoring and backups</div></li>
+                    <li><div class="node">VM migration</div></li>
+                    <li><div class="node">Redundancy for disaster recovery</div></li>
+                  </ul>
+                </li>
+    
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Manageability & Interoperability</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">VM control (create, suspend...)</div></li>
+                    <li><div class="node">Automated billing</div></li>
+                    <li><div class="node">Resource monitoring</div></li>
+                  </ul>
+                </li>
+    
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Performance & Optimization</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Load balancing</div></li>
+                    <li><div class="node">Live migration</div></li>
+                    <li><div class="node">Network-aware deployment</div></li>
+                  </ul>
+                </li>
+    
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Accessibility & Portability</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Web-based access</div></li>
+                    <li><div class="node">No local install needed</div></li>
+                    <li><div class="node">Standardized VM format</div></li>
+                  </ul>
+                </li>
+    
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  <script src="app.js"></script>
+</body>
+</html>

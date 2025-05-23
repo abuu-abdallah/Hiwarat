@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Deployment Models</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Deployment Models</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <!-- Public Cloud -->
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Public Cloud</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Openly accessible infrastructure</div></li>
+                    <li><div class="node">Multi-tenant and external</div></li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Benefits</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Cost Effective</div></li>
+                        <li><div class="node">Reliability</div></li>
+                        <li><div class="node">Flexibility</div></li>
+                        <li><div class="node">Location Independent</div></li>
+                        <li><div class="node">Utility Style (Pay per use)</div></li>
+                        <li><div class="node">High Scalability</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Disadvantages</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Low Security</div></li>
+                        <li><div class="node">Less Customizable</div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Private Cloud -->
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Private Cloud</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Dedicated to one organization</div></li>
+                    <li><div class="node">Managed internally or by third party</div></li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Benefits</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">High Security and Privacy</div></li>
+                        <li><div class="node">More Control</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Disadvantages</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Restricted Scope</div></li>
+                        <li><div class="node">High Cost</div></li>
+                        <li><div class="node">Limited Scalability</div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Public vs Private -->
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Public vs Private</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Infra: Homogeneous vs Heterogeneous</div></li>
+                    <li><div class="node">Policy: Common vs Customized</div></li>
+                    <li><div class="node">Resources: Shared vs Dedicated</div></li>
+                    <li><div class="node">Cost: OPEX vs CAPEX</div></li>
+                    <li><div class="node">Economy: Scale vs Control</div></li>
+                  </ul>
+                </li>
+
+                <!-- Community Cloud -->
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Community Cloud</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Shared among organizations with similar goals</div></li>
+                    <li><div class="node">Managed internally or by third party</div></li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Benefits</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Cost Effective</div></li>
+                        <li><div class="node">Organizational Sharing</div></li>
+                        <li><div class="node">Moderate Security</div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Hybrid Cloud -->
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Hybrid Cloud</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Combines 2+ clouds (public, private, community)</div></li>
+                    <li><div class="node">Critical vs Non-critical task separation</div></li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Benefits</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Scalability</div></li>
+                        <li><div class="node">Flexibility</div></li>
+                        <li><div class="node">Cost Effective</div></li>
+                        <li><div class="node">Enhanced Security</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node-wrapper" onclick="toggle(this)">
+                        <div class="node">Disadvantages</div>
+                        <span class="toggle">►</span>
+                      </div>
+                      <ul>
+                        <li><div class="node">Network Complexity</div></li>
+                        <li><div class="node">Security Compliance Issues</div></li>
+                        <li><div class="node">Dependent Infrastructure</div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Tenancy -->
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Tenancy</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Tenant: Group with shared privileges</div></li>
+                    <li><div class="node">Resources isolated for each tenant</div></li>
+                  </ul>
+                </li>
+
+                <!-- Multitenancy -->
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Multitenancy</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Multiple users share same infra</div></li>
+                    <li><div class="node">Data and sessions are isolated</div></li>
+                    <li><div class="node">Used in both public and private cloud</div></li>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

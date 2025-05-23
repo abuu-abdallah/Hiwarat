@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 3</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Service Models</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Service Models Overview</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Infrastructure as a Service (IaaS)</div></li>
+                <li><div class="node">Platform as a Service (PaaS)</div></li>
+                <li><div class="node">Software as a Service (SaaS)</div></li>
+              </ul>
+            </li>
+
+            <!-- IaaS Section -->
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Infrastructure as a Service (IaaS)</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Provision processing, storage, network</div></li>
+                <li><div class="node">User controls OS, storage, apps</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Enabling Techniques</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Virtualization</div></li>
+                    <li><div class="node">Hypervisor for OS abstraction</div></li>
+                    <li><div class="node">Multi-tenant hardware sharing</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Resource Management Interface</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">VMs: Create, suspend, terminate</div></li>
+                    <li><div class="node">Storage: Allocate, write, read</div></li>
+                    <li><div class="node">Network: IP allocation, bandwidth</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">System Monitoring Interface</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Monitor VM CPU, memory, IO</div></li>
+                    <li><div class="node">Monitor storage usage</div></li>
+                    <li><div class="node">Monitor network connectivity</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- PaaS Section -->
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Platform as a Service (PaaS)</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Deploy apps using provider's tools</div></li>
+                <li><div class="node">No control over infrastructure</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Enabling Techniques</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Runtime environment design</div></li>
+                    <li><div class="node">Program libraries & APIs</div></li>
+                    <li><div class="node">Integrated development tools</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Programming IDE</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Includes debugger, test env</div></li>
+                    <li><div class="node">Common APIs: compute, storage, communication</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">System Control Interface</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Policy-based decision making</div></li>
+                    <li><div class="node">Workflow control for setup</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- SaaS Section -->
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Software as a Service (SaaS)</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Access provider apps via browser</div></li>
+                <li><div class="node">No infrastructure control</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Enabling Techniques</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Web services</div></li>
+                    <li><div class="node">Internet-based delivery</div></li>
+                    <li><div class="node">Cross-device support</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Web-based Applications</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">General: Office, messaging</div></li>
+                    <li><div class="node">Business: ERP, CRM</div></li>
+                    <li><div class="node">Scientific: Simulations</div></li>
+                    <li><div class="node">Government: Healthcare, transport</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Web Portals</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Search, news, stock, mail</div></li>
+                    <li><div class="node">Unified look & access control</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

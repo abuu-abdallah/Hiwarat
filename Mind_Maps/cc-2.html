@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Cloud Computing</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Cloud Definitions</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">NIST: On-demand network access to shared resources</div></li>
+                <li><div class="node">Wikipedia: Internet-based computing with scalable virtual resources</div></li>
+                <li><div class="node">Whatis.com: Hosted services over the Internet</div></li>
+                <li><div class="node">Berkeley: SaaS & Datacenter as Utility Computing</div></li>
+                <li><div class="node">Buyya: Virtualized and provisioned system via SLA</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">NIST Model Components</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">5 Essential Characteristics</div></li>
+                <li><div class="node">3 Service Models</div></li>
+                <li><div class="node">4 Deployment Models</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Cloud Characteristics</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">On-demand self-service</div></li>
+                <li><div class="node">Broad network access</div></li>
+                <li><div class="node">Resource pooling</div></li>
+                <li><div class="node">Rapid elasticity</div></li>
+                <li><div class="node">Measured service</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">User Perspective</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Focus on service, not infrastructure</div></li>
+                <li><div class="node">Pay-per-use model</div></li>
+                <li><div class="node">Service quality is priority</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Central Ideas</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Utility Computing</div></li>
+                <li><div class="node">SOA - Service Oriented Architecture</div></li>
+                <li><div class="node">SLA - Service Level Agreement</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Utility Computing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Provisioning on-demand resources</div></li>
+                <li><div class="node">Charges based on usage</div></li>
+                <li><div class="node">Efficient resource use</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Service Oriented Architecture (SOA)</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Collection of communicating services</div></li>
+                <li><div class="node">Used across business domains</div></li>
+                <li><div class="node">Implemented via Web Services</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Service Level Agreement (SLA)</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Contract between provider and customer</div></li>
+                <li><div class="node">Includes QoS metrics</div></li>
+                <li><div class="node">Covers performance, uptime, penalties</div></li>
+                <li><div class="node">Specifies security capabilities</div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Enabling Techniques</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Hardware Virtualization</div></li>
+                <li><div class="node">Parallel & Distributed Computing</div></li>
+                <li><div class="node">Web Services for Integration</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
