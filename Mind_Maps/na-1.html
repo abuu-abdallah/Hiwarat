@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Windows Server Networking</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Basic Network Concepts</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Network: Linked NOS for sharing resources</div></li>
+                <li><div class="node">NOS: Enables sharing of data, voice, video</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Peer-to-Peer Network Model</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">All computers are equal (no server)</div></li>
+                <li><div class="node">Ideal for small offices</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Advantages</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">File/folder/printer sharing</div></li>
+                    <li><div class="node">Simple setup</div></li>
+                    <li><div class="node">Supports workgroups</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Server-Based Network Model</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Managed through one or more servers</div></li>
+                <li><div class="node">Clients access server resources</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Advantages</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Multi-user access</div></li>
+                    <li><div class="node">Centralized management</div></li>
+                    <li><div class="node">Robust security</div></li>
+                    <li><div class="node">High performance</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Using Windows Server</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">File/folder/printer sharing</div></li>
+                <li><div class="node">Centralized or decentralized access</div></li>
+                <li><div class="node">Software app management</div></li>
+                <li><div class="node">Support for email, web, e-commerce</div></li>
+                <li><div class="node">Central backups and upgrades</div></li>
+                <li><div class="node">Time and cost efficient administration</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Example Windows Server Services</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Network management</div></li>
+                <li><div class="node">Web-based management</div></li>
+                <li><div class="node">Security and access control</div></li>
+                <li><div class="node">Storage management</div></li>
+                <li><div class="node">Remote access</div></li>
+                <li><div class="node">Application services</div></li>
+                <li><div class="node">Printer management</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Server Clustering</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Links multiple servers to act as one</div></li>
+                <li><div class="node">Shares load and resources</div></li>
+                <li><div class="node">Improves redundancy and performance</div></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

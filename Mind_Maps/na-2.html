@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Network Operating Systems</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">What is a Network OS?</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Essential for network operation</div></li>
+                <li><div class="node">Connects computers and peripherals</div></li>
+                <li><div class="node">Coordinates system functions</div></li>
+                <li><div class="node">Provides access control and security</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">System Resource Management</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Memory allocation</div></li>
+                <li><div class="node">CPU time distribution</div></li>
+                <li><div class="node">Disk space control</div></li>
+                <li><div class="node">Peripheral coordination</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Software Components</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Client Software</div></li>
+                <li><div class="node">Server Software</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Client Role</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Sends requests to server</div></li>
+                <li><div class="node">Handles local execution until network access is needed</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Server Role</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Responds to client requests</div></li>
+                <li><div class="node">Shares data and devices</div></li>
+                <li><div class="node">Controls access permissions</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Resource Sharing</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Make resources publicly available</div></li>
+                <li><div class="node">Control and coordinate user access</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">User Management</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Control who accesses network resources</div></li>
+                <li><div class="node">Manage user privileges</div></li>
+                <li><div class="node">Remove or update users</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Network Management Tools</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Monitor network behavior</div></li>
+                <li><div class="node">Graphical monitoring (charts, alerts)</div></li>
+                <li><div class="node">Maintain high performance</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Categories of Servers</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">File Server</div></li>
+                <li><div class="node">Data Server</div></li>
+                <li><div class="node">Printer Server</div></li>
+                <li><div class="node">Database Server</div></li>
+                <li><div class="node">Web Server</div></li>
+                <li><div class="node">Video Server</div></li>
+                <li><div class="node">E-mail Server</div></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

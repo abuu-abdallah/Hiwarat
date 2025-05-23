@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lecture 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen"><img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px"></button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">Administrative Shares</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">What is an Administrative Share?</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Automatically created by Windows</div></li>
+                <li><div class="node">Ends with a dollar sign ($)</div></li>
+                <li><div class="node">Used by admins, services, and tools</div></li>
+                <li><div class="node">Not shown in net view or network browsing</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Default Hidden Shares</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">C$, D$ – Root drive shares</div></li>
+                <li><div class="node">ADMIN$ – %SYSTEMROOT% share</div></li>
+                <li><div class="node">FAX$ – Used by fax clients</div></li>
+                <li><div class="node">IPC$ – For remote admin via named pipes</div></li>
+                <li><div class="node">PRINT$ – For remote printer admin</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Creation & Deletion</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Create Hidden Share</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Use Computer Management → Shared Folders → New Share</div></li>
+                    <li><div class="node">Name must end in "$"</div></li>
+                    <li><div class="node">Set permissions (e.g., admins only)</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">Delete Hidden Share</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">Use Computer Management → Shares → Stop Sharing</div></li>
+                    <li><div class="node">System shares reappear after reboot</div></li>
+                    <li><div class="node">User-created hidden shares do not</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Clarifications</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Not all $-suffixed shares are administrative</div></li>
+                <li><div class="node">Only system-defined ones are true admin shares</div></li>
+                <li><div class="node">Windows XP Home doesn’t create them</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">Accessing Admin Shares</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">Use UNC path: \\ComputerName\C$</div></li>
+                <li><div class="node">ADMIN$: \\ComputerName\ADMIN$</div></li>
+                <li><div class="node">Only accessible with proper permissions</div></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
