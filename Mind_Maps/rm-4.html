@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>المحاضرة 4 - أنواع البحث ومناهجه (2)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen">
+      <img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px">
+    </button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">أنواع البحث ومناهج (2)</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">مخرجات التعلم</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">تعريف ووصف المنهج التجريبي ومجالاته وأدواته وخطواته</div></li>
+                <li><div class="node">ذكر أمثلة لدراسات استخدمت المنهج التجريبي</div></li>
+                <li><div class="node">تعريف ووصف المنهج المقارن ومجالاته وشروطه</div></li>
+                <li><div class="node">ذكر أمثلة لدراسات استخدمت المنهج المقارن</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">المنهج التجريبي</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">يتحكم الباحث في الظاهرة ويقيس أثر المتغيرات</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">الخصائص</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">التحكم في الظروف والمتغيرات</div></li>
+                    <li><div class="node">استخدام البيئة الاصطناعية أو الطبيعية</div></li>
+                    <li><div class="node">التركيز على العلاقات السببية</div></li>
+                    <li><div class="node">قياس أثر المتغيرات بدقة</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">المبادئ</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">مبدأ الاتفاق</div></li>
+                    <li><div class="node">مبدأ الاختلاف</div></li>
+                    <li><div class="node">مبدأ الاتفاق والاختلاف</div></li>
+                    <li><div class="node">مبدأ العوامل المتبقية</div></li>
+                    <li><div class="node">مبدأ التلازم </div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">المجالات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">الظواهر الفيزيائية</div></li>
+                    <li><div class="node">العلوم الطبيعية والطبية</div></li>
+                    <li><div class="node">العلوم الإدارية والقانونية</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">الأدوات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">الملاحظة</div></li>
+                    <li><div class="node">المشاهدة</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">أنواع التجارب</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">تجارب معملية</div></li>
+                    <li><div class="node">تجارب ميدانية</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">الخطوات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">تحديد المشكلة والهدف</div></li>
+                    <li><div class="node">تحديد المتغيرات</div></li>
+                    <li><div class="node">تعريف المتغيرات وطرق القياس</div></li>
+                    <li><div class="node">تصميم التجربة</div></li>
+                    <li><div class="node">تنفيذ التجربة وقياس النتائج</div></li>
+                    <li><div class="node">تحليل النتائج واستخلاص العلاقات</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">العيوب</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">تأثير البيئة الاصطناعية على سلوك الأفراد</div></li>
+                    <li><div class="node">صعوبة تعميم النتائج</div></li>
+                    <li><div class="node">اختيار أدوات غير دقيقة</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">أمثلة على الدراسات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">أثر استخدام الحاسوب على أداء المعوقين</div></li>
+                    <li><div class="node">أثر التربية الحركية على الأطفال</div></li>
+                    <li><div class="node">الذكاء الاصطناعي في التطبيقات التجارية</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">المنهج المقارن</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">مقارنة ظاهرتين أو أكثر لاستخلاص التشابه والاختلاف</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">المجالات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">العلوم الطبيعية</div></li>
+                    <li><div class="node">العلوم القانونية</div></li>
+                    <li><div class="node">العلوم الاجتماعية والإنسانية</div></li>
+                    <li><div class="node">العلوم الشرعية والسياسية والاقتصادية</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">الخطوات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">تحديد متغيرات وفروض الدراسة</div></li>
+                    <li><div class="node">تحديد موضع ومجال المقارنة  </div></li>
+                    <li><div class="node">تحديد ادوات المقارنة</div></li>
+                    <li><div class="node">جمع البيانات وتصنيفها وتبويبها</div></li>
+                    <li><div class="node">قياس وتحليل البيانات</div></li>
+                    <li><div class="node">استخلاص اثر الظروف والعوامل على الظاهرة</div></li>
+
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">الشروط</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">ألا تركز المقارنة على حادثة واحدة</div></li>
+                    <li><div class="node">يجب وجود تشابه أو اختلاف قابل للمقارنة</div></li>
+                    <li><div class="node">الزمان والمكان عنصران حاسمان</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">أمثلة على الدراسات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">مقارنة أداء التطبيقات على المنصات المتنقلة والمحلية</div></li>
+                    <li><div class="node">خوارزميات توزيع العبء في الحوسبة السحابية</div></li>
+                    <li><div class="node">مقارنة الأداء الرياضي في المسافات القصيرة والمتوسطة</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

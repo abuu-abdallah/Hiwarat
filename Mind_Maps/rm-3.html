@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>المحاضرة 3 - أنواع البحوث ومناهجها</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen">
+      <img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px">
+    </button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">أنواع البحث العلمي ومناهجه (1)</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">أنواع البحوث العلمية</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">بحسب طبيعتها</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">البحوث النظرية</div></li>
+                    <li><div class="node">البحوث التطبيقية</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">بحسب المنهج</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">البحوث الوثائقية</div></li>
+                    <li><div class="node">البحوث الميدانية</div></li>
+                    <li><div class="node">البحوث التجريبية</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">بحسب جهة التنفيذ</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">البحوث الأكاديمية</div></li>
+                    <li><div class="node">البحوث غير الأكاديمية</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">مناهج البحث العلمي</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">تعريف منهج البحث العلمي</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">أسلوب للتفكير والعمل يعتمد عليه الباحث لتنظيم أفكاره وتحليلها وعرضها</div></li>
+                    <li><div class="node">يهدف للوصول إلى نتائج وحقائق حول الظاهرة موضوع الدراسة</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">أنواع المناهج</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">المنهج التاريخي</div></li>
+                    <li><div class="node">المنهج الوصفي</div></li>
+                    <li><div class="node">المنهج التجريبي</div></li>
+                    <li><div class="node">المنهج الاستقرائي</div></li>
+                    <li><div class="node">المنهج الاستنباطي</div></li>
+                    <li><div class="node">المنهج المقارن</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">المنهج الوصفي</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">المزايا</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">يعطي معلومات دقيقة عن الظواهر الإنسانية</div></li>
+                    <li><div class="node">تنوع أساليب الاستخدام</div></li>
+                    <li><div class="node">لا يتدخل الباحث في الظاهرة</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">العيوب</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">الاعتماد على معلومات مشوهة</div></li>
+                    <li><div class="node">احتمال التحيز</div></li>
+                    <li><div class="node">صعوبة إثبات الفروض</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">الأدوات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">الملاحظة</div></li>
+                    <li><div class="node">المقابلة</div></li>
+                    <li><div class="node">الاختبارات</div></li>
+                    <li><div class="node">الاستبانات</div></li>
+                    <li><div class="node">المقاييس المتدرجة</div></li>
+                    <li><div class="node">تحليل الوثائق والسجلات</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">الخطوات</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">تحديد المشكلة وصياغتها</div></li>
+                    <li><div class="node">وضع الفروض المحتملة</div></li>
+                    <li><div class="node">جمع البيانات</div></li>
+                    <li><div class="node">تحليل البيانات وتفسيرها</div></li>
+                    <li><div class="node">كتابة النتائج والتوصيات</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">أساليب المنهج الوصفي</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">أسلوب المسح</div></li>
+                <li><div class="node">أسلوب دراسة الحالة</div></li>
+                <li><div class="node">أسلوب تحليل المحتوى</div></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

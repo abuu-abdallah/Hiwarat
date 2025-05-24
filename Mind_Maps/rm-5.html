@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>المحاضرة 5 - خطة البحث العلمي</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="fullscreen-btn" title="Full screen">
+      <img src="assets/images/fullscreen.png" alt="Full Screen" height="15px" width="15px">
+    </button>
+  </div>
+  <div style="text-align: right; margin-bottom: 7px;">
+    <button id="zoom-in-btn" title="Zoom In">+</button>
+    <button id="zoom-out-btn" title="Zoom Out">-</button>
+  </div>
+  <div id="zoom-container">
+    <div class="mindmap">
+      <ul class="visible">
+        <li>
+          <div class="node-wrapper" onclick="toggle(this)">
+            <div class="node root">خطة البحث العلمي</div>
+            <span class="toggle">►</span>
+          </div>
+          <ul>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">مخرجات التعلم</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">يعدد خطوات ومراحل البحث العلمي</div></li>
+                <li><div class="node">يسرد خطوات إعداد وتصميم خطة البحث</div></li>
+                <li><div class="node">يبين إجراءات كل خطوة من خطوات الخطة</div></li>
+                <li><div class="node">يصمم خطة بحث علمية متكاملة</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">مراحل البحث العلمي</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">تصميم خطة البحث ومنهجيته</div></li>
+                <li><div class="node">جمع البيانات وتحليلها</div></li>
+                <li><div class="node">كتابة تقرير البحث</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">مكونات خطة البحث</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">عنوان البحث</div></li>
+                <li><div class="node">مشكلة البحث</div></li>
+                <li><div class="node">فروض البحث</div></li>
+                <li><div class="node">أهمية البحث</div></li>
+                <li><div class="node">أهداف البحث</div></li>
+                <li><div class="node">منهج البحث</div></li>
+                <li><div class="node">أدوات البحث</div></li>
+                <li><div class="node">مجتمع وعينة الدراسة</div></li>
+                <li><div class="node">حدود البحث</div></li>
+                <li><div class="node">الدراسات السابقة</div></li>
+                <li><div class="node">مصطلحات البحث</div></li>
+                <li><div class="node">هيكل البحث</div></li>
+                <li><div class="node">تحديد المصادر والمراجع</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">عنوان البحث</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">أن يكون محدد وغير عام</div></li>
+                <li><div class="node">مرتبط بموضوع البحث</div></li>
+                <li><div class="node">يذكر المكان أو الفترة عند الحاجة</div></li>
+                <li><div class="node">يعكس مشكلة وفرضية البحث</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">مصادر تحديد واختيار العنوان</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">رسائل الماجستير والدكتوراه</div></li>
+                    <li><div class="node">التقارير والاحصائيات</div></li>
+                    <li><div class="node">الكتب والمقالات العلمية</div></li>
+                    <li><div class="node">آراء الخبراء والمختصين</div></li>
+                    <li><div class="node">التكليف من جهة معينة</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">مشكلة البحث</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">تساؤل أو موقف غامض يحتاج لتفسير</div></li>
+                <li><div class="node">تحديد أهمية المشكلة</div></li>
+                <li><div class="node">مصادر المشكلة: خبرة، قراءة، واقع</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">مواصفات المشكلة الجيدة</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">أن تكون واقعية وحديثة</div></li>
+                    <li><div class="node">قابلة للدراسة والتطبيق</div></li>
+                    <li><div class="node">تتوفر حولها معلومات كافية</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">طرق صياغة المشكلة</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">صياغة تقديرية لفظية</div></li>
+                    <li><div class="node">صياغة على هيئة سؤال</div></li>
+                    <li><div class="node">صياغة على هيئة فرض</div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">فروض البحث</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">تخمين أو استنتاج مؤقت</div></li>
+                <li>
+                  <div class="node-wrapper" onclick="toggle(this)">
+                    <div class="node">أنواع الفروض</div>
+                    <span class="toggle">►</span>
+                  </div>
+                  <ul>
+                    <li><div class="node">الفرض المباشر (علاقة بين متغيرين)</div></li>
+                    <li><div class="node">الفرض غير المباشر (نفي العلاقة)</div></li>
+                  </ul>
+                </li>
+                <li><div class="node">مكونات الفرض: متغير مستقل وتابع</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">أهمية وأهداف البحث</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">أهمية البحث مقارنة بمواضيع أخرى</div></li>
+                <li><div class="node">الفائدة العلمية أو التطبيقية</div></li>
+                <li><div class="node">الجهات المستفيدة</div></li>
+                <li><div class="node">ترتبط الأهداف بمشكلة البحث</div></li>
+                <li><div class="node">تساعد في توجيه البحث والتحقق من نتائجه</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">مجتمع وعينة الدراسة</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">تحديد المجتمع بدقة</div></li>
+                <li><div class="node">العينة ممثلة ويمكن تعميم النتائج</div></li>
+                <li><div class="node">أنواع العينات: عشوائية، طبقية، عرضية</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">حدود البحث</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">حدود موضوعية</div></li>
+                <li><div class="node">حدود جغرافية (مكانية)</div></li>
+                <li><div class="node">حدود زمنية</div></li>
+                <li><div class="node">حدود بشرية</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">الدراسات السابقة</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">توفر خلفية معرفية قوية</div></li>
+                <li><div class="node">تجنب تكرار الأخطاء</div></li>
+                <li><div class="node">توضح موضع البحث ضمن الدراسات</div></li>
+                <li><div class="node">تحليل النتائج والتشابه أو الاختلاف</div></li>
+                <li><div class="node">طرق الحصول على الدراسات: مكتبات، دوريات، إنترنت</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node-wrapper" onclick="toggle(this)">
+                <div class="node">هيكل البحث</div>
+                <span class="toggle">►</span>
+              </div>
+              <ul>
+                <li><div class="node">يتضمن فصول ومباحث واضحة</div></li>
+                <li><div class="node">يساعد في تنظيم العرض والتحليل</div></li>
+                <li><div class="node">يمكن تعديله حسب الحاجة</div></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
