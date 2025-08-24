@@ -49,6 +49,10 @@
                         <p class="text-gray-500 font-medium">Level Number:</p>
                         <p id="levelNumber" class="font-semibold text-gray-800"></p>
                     </div>
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <p class="text-gray-500 font-medium">Grade:</p>
+                        <p id="grade" class="font-semibold text-gray-800"></p>
+                    </div>
                     <!-- Issue Date -->
                     <div class="flex justify-between items-center border-b pb-2">
                         <p class="text-gray-500 font-medium">Issue Date:</p>
@@ -71,12 +75,14 @@
                 studentName: 'Basmala Mahmoud Ahmed',
                 levelName: 'Basics 1',
                 levelNumber: '1',
-                issueDate: '2025-8-26',
+                grade: 'A+',
+                issueDate: '26-8-2025',
             };
 
             document.getElementById('studentName').textContent = certificateData.studentName;
             document.getElementById('levelName').textContent = certificateData.levelName;
             document.getElementById('levelNumber').textContent = certificateData.levelNumber;
+            document.getElementById('grade').textContent = certificateData.grade;
             document.getElementById('issueDate').textContent = certificateData.issueDate;
             document.getElementById('certificateId').textContent = certificateData.id;
         });
