@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-green-50 to-purple-50 flex items-center justify-center min-h-screen p-8 text-gray-900">
+    <div id="app" class="w-full max-w-4xl">
+            <img src="LexiPedia__Logo.png" alt="Institute Logo" width=300>        
+            <div class="flex flex-col items-center space-y-8">
+            <h2 class="text-3xl font-bold text-gray-800 flex items-center gap-2">
+                <!-- Checkmark SVG Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-green-500">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                </svg>
+                Verification Result
+            </h2>
+            
+            <!-- Certificate Details Card -->
+            <div id="certificate-card" class="w-full max-w-xl bg-white rounded-3xl shadow-2xl">
+                <div class="p-6 border-b border-gray-100">
+                    <h2 class="text-2xl font-bold text-gray-800">Certificate Details</h2>
+                </div>
+                <div class="p-6 space-y-4">
+                    <!-- Student Name -->
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <p class="text-gray-500 font-medium">Student Name:</p>
+                        <p id="studentName" class="font-semibold text-gray-800"></p>
+                    </div>
+                    <!-- Level Name -->
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <p class="text-gray-500 font-medium">Level Name:</p>
+                        <p id="levelName" class="font-semibold text-gray-800"></p>
+                    </div>
+                    <!-- Level Number -->
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <p class="text-gray-500 font-medium">Level Number:</p>
+                        <p id="levelNumber" class="font-semibold text-gray-800"></p>
+                    </div>
+                    <!-- Issue Date -->
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <p class="text-gray-500 font-medium">Issue Date:</p>
+                        <p id="issueDate" class="font-semibold text-gray-800"></p>
+                    </div>
+                    <!-- Certificate ID -->
+                    <div class="flex justify-between items-center">
+                        <p class="text-gray-500 font-medium">Certificate ID:</p>
+                        <p id="certificateId" class="font-mono text-sm text-gray-600"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const certificateData = {
+                id: 'example-cert-01',
+                studentName: 'Basmala Mahmoud Ahmed',
+                levelName: 'Basics 1',
+                levelNumber: '1',
+                issueDate: '2025-8-26',
+            };
+
+            document.getElementById('studentName').textContent = certificateData.studentName;
+            document.getElementById('levelName').textContent = certificateData.levelName;
+            document.getElementById('levelNumber').textContent = certificateData.levelNumber;
+            document.getElementById('issueDate').textContent = certificateData.issueDate;
+            document.getElementById('certificateId').textContent = certificateData.id;
+        });
+    </script>
+</body>
+</html>
