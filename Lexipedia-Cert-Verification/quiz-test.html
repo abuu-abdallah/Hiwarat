@@ -10,13 +10,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        .card {
-            background-color: white;
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s ease-in-out;
-        }
         .option-label {
             display: block;
             padding: 1rem;
@@ -68,8 +61,8 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
 
-    <main id="quiz-container" class="card w-full max-w-3xl">
-        <div id="quiz-content">
+    <main id="quiz-container" class="w-full max-w-3xl">
+        <div id="quiz-content" class="bg-white p-6 rounded-2xl shadow-lg">
             <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">HCI Quiz</h1>
             <div id="all-questions-container" class="space-y-8"></div>
             <div class="text-center mt-10">
@@ -77,7 +70,7 @@
             </div>
         </div>
 
-        <div id="results-screen" class="hidden">
+        <div id="results-screen" class="hidden bg-white p-6 rounded-2xl shadow-lg">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Quiz Completed!</h2>
             <p id="score-text" class="text-2xl text-center text-gray-600 font-semibold mb-8"></p>
             <div id="results-summary" class="space-y-6"></div>
@@ -362,7 +355,6 @@
         function renderAllQuestions() {
             quizData.forEach((question, questionIndex) => {
                 const questionDiv = document.createElement('div');
-                // Removed the card classes to remove the 'frames'
                 questionDiv.className = 'mb-8'; 
                 questionDiv.innerHTML = `
                     <h2 class="text-xl font-semibold text-gray-700 mb-6">${questionIndex + 1}. ${question.question}</h2>
@@ -444,7 +436,6 @@
 
                 const resultItem = document.createElement('div');
                 resultItem.className = 'p-4 border rounded-lg';
-                // Using classList.add() for multiple classes is the fix for the original error.
                 resultItem.classList.add(isCorrect ? 'border-green-300' : 'border-red-300', isCorrect ? 'bg-green-50' : 'bg-red-50');
 
                 const userAnswerText = Array.isArray(userAnswer) ? userAnswer.join(', ') : userAnswer || 'Not answered';
