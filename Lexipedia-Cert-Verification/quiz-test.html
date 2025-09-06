@@ -71,7 +71,7 @@
     <main id="quiz-container" class="card w-full max-w-3xl">
         <div id="quiz-content">
             <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">HCI Quiz</h1>
-            <div id="all-questions-container" class="space-y-12"></div>
+            <div id="all-questions-container" class="space-y-8"></div>
             <div class="text-center mt-10">
                 <button id="submit-btn" class="btn btn-primary">Submit Quiz</button>
             </div>
@@ -362,7 +362,8 @@
         function renderAllQuestions() {
             quizData.forEach((question, questionIndex) => {
                 const questionDiv = document.createElement('div');
-                questionDiv.className = 'bg-white p-6 rounded-xl shadow-md';
+                // Removed the card classes to remove the 'frames'
+                questionDiv.className = 'mb-8'; 
                 questionDiv.innerHTML = `
                     <h2 class="text-xl font-semibold text-gray-700 mb-6">${questionIndex + 1}. ${question.question}</h2>
                     <div class="options-container space-y-4" data-index="${questionIndex}"></div>
@@ -443,6 +444,7 @@
 
                 const resultItem = document.createElement('div');
                 resultItem.className = 'p-4 border rounded-lg';
+                // Using classList.add() for multiple classes is the fix for the original error.
                 resultItem.classList.add(isCorrect ? 'border-green-300' : 'border-red-300', isCorrect ? 'bg-green-50' : 'bg-red-50');
 
                 const userAnswerText = Array.isArray(userAnswer) ? userAnswer.join(', ') : userAnswer || 'Not answered';
