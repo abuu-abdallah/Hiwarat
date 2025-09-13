@@ -12,12 +12,20 @@ const showMessage = (message, duration = 3000, isError = false) => {
         const subjects = [
             {
                 name: "Mathematics",
-                lectures: Array.from({ length: 12 }, (_, i) => ({
-                    id: `lecture-${i + 1}`,
-                    name: `Lecture ${i + 1}: Calculus Fundamentals`,
-                    podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
-                    quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
-                }))
+                lectures: [
+                    {
+                        id: `lecture-1`,
+                        name: `Lecture 1: Calculus Fundamentals`,
+                        podbean: `<iframe title="CC 10: Security issues 1" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=pbdx9-1936757-pb&from=pb6admin&share=1&download=1&rtl=0&fonts=Arial&skin=1&font-color=auto&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
+                        quiz: `<iframe src="https://abuu-abdallah.github.io/Hiwarat/Lexipedia-Cert-Verification/quiz-test.html" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    ...Array.from({ length: 11 }, (_, i) => ({
+                        id: `lecture-${i + 2}`,
+                        name: `Lecture ${i + 2}: Calculus Fundamentals`,
+                        podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
+                        quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
+                    }))
+                ]
             },
             {
                 name: "History",
@@ -80,7 +88,7 @@ const showMessage = (message, duration = 3000, isError = false) => {
             
             subject.lectures.forEach(lecture => {
                 const card = document.createElement('div');
-                card.classList.add('bg-gray-900', 'p-4', 'rounded-lg', 'shadow', 'cursor-pointer', 'hover:shadow-md', 'transition-shadow', 'transition-colors', 'duration-300', 'border-2', 'border-orange-500');
+                card.classList.add('bg-gray-900', 'p-4', 'rounded-lg', 'shadow', 'cursor-pointer', 'hover:shadow-md', 'transition-shadow', 'transition-colors', 'duration-300', 'border-2', 'border-custom-orange');
                 card.innerHTML = `
                     <h3 class="font-semibold text-lg text-gray-200">${lecture.name}</h3>
                 `;
@@ -98,8 +106,8 @@ const showMessage = (message, duration = 3000, isError = false) => {
             document.getElementById('lecture-detail-container').classList.remove('hidden');
 
             document.getElementById('lecture-title').textContent = lecture.name;
-            document.getElementById('lecture-frame').src = lecture.podbean;
-            document.getElementById('quiz-frame').src = lecture.quiz;
+            document.getElementById('lecture-podbean-container').innerHTML = lecture.podbean;
+            document.getElementById('quiz-frame').innerHTML = lecture.quiz;
         };
         
         const handleLogin = () => {

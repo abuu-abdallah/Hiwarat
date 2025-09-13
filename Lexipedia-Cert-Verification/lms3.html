@@ -71,7 +71,7 @@
         <!-- Header -->
         <header class="w-full mb-6 flex items-center justify-between">
             <div class="flex-shrink-0">
-                <img src="hiwarat-logo-arc.png" alt="LMS Logo" class="h-16 w-16">
+                <a href="https://sites.google.com/view/hiwarat/"><img src="hiwarat-logo-arc.png" alt="LMS Logo" class="h-17 w-16"></a>
             </div>
             <div class="flex-1 text-center">
                 <h1 class="text-4xl md:text-5xl font-extrabold text-blue-400 tracking-tight"style="color: #0097B2;"><span style="color: #FCA303;">Hi</span>warat</h1>
@@ -112,8 +112,16 @@
                     <div id="quiz-section" class="flex flex-col bg-gray-800 p-6 rounded-lg shadow-inner">
                         <div class="flex items-center justify-between mb-4">
                             <h2 class="text-2xl font-bold text-gray-200">Quiz</h2>
+                            <!-- Full Screen button for quiz -->
+                            <button id="fullScreenQuizBtn" class="p-2 bg-gray-700 hover:bg-gray-600 transition-colors duration-200 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" title="Full Screen">
+                                <!--<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m-1.5 1.5L2.25 18.75m0 0v-4.5m0 4.5h4.5m-4.5 0L9 15m6.75 6.75v-4.5m0 4.5h4.5m-4.5 0L15 15m1.5-1.5L21.75 5.25m0 0v4.5m0-4.5h-4.5m4.5 0L15 9" />
+                                </svg>-->
+                                <img src="fullscreen-white.png" width="15px">
+                            </button>
                         </div>
                         <div id="quiz-frame" class="w-full h-80 rounded-lg shadow-md"></div>
+                        
                     </div>
                 </div>
             </main>
@@ -124,8 +132,6 @@
     <div id="messageBox" class="message-box bg-blue-500 text-white"></div>
 
     <script>
-        // No Firebase needed for this version.
-        
         const showMessage = (message, duration = 3000, isError = false) => {
             const messageBox = document.getElementById('messageBox');
             messageBox.textContent = message;
@@ -139,12 +145,29 @@
 
         const subjects = [
             {
-                name: "Mathematics",
+                name: "Human Computer Interaction",
                 lectures: [
                     {
                         id: `lecture-1`,
-                        name: `Lecture 1: Calculus Fundamentals`,
-                        podbean: `<iframe title="CC 10: Security issues 1" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=pbdx9-1936757-pb&from=pb6admin&share=1&download=1&rtl=0&fonts=Arial&skin=1&font-color=auto&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
+                        name: `Lecture 1: Introduction to Human-Computer Interaction`,
+                        podbean: `<iframe title="HCI 1: Introduction to Human-Computer Interaction" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=mu5mj-195813f-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=ffffff&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
+                        quiz: `<iframe id="quizIframe" src="https://abuu-abdallah.github.io/Hiwarat/Lexipedia-Cert-Verification/quiz-test.html" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    ...Array.from({ length: 11 }, (_, i) => ({
+                        id: `lecture-${i + 2}`,
+                        name: `Lecture ${i + 2}: Calculus Fundamentals`,
+                        podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
+                        quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
+                    }))
+                ]
+            },
+            {
+                name: "E-commerce",
+                lectures: [
+                    {
+                        id: `lecture-1`,
+                        name: `Lecture 1: Introduction to E-Commerce (1)`,
+                        podbean: `<iframe title="EC 1: Introduction-to-E-commerce (1)" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=fpjgu-19633f7-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=ffffff&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
                         quiz: `<iframe src="https://abuu-abdallah.github.io/Hiwarat/Lexipedia-Cert-Verification/quiz-test.html" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`
                     },
                     ...Array.from({ length: 11 }, (_, i) => ({
@@ -156,49 +179,79 @@
                 ]
             },
             {
-                name: "History",
-                lectures: Array.from({ length: 12 }, (_, i) => ({
-                    id: `lecture-${i + 1}`,
-                    name: `Lecture ${i + 1}: The Roman Empire`,
-                    podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
-                    quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
-                }))
+                name: "Data Mining",
+                lectures: [
+                    {
+                        id: `lecture-1`,
+                        name: `Lecture 1: Introduction`,
+                        podbean: `<iframe title="DM 1: Introduction" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=wzc8n-19633fe-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=ffffff&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
+                        quiz: `<iframe id="fs-iframe" src="https://abuu-abdallah.github.io/Hiwarat/Lexipedia-Cert-Verification/quiz-test.html" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    ...Array.from({ length: 11 }, (_, i) => ({
+                        id: `lecture-${i + 2}`,
+                        name: `Lecture ${i + 2}: Calculus Fundamentals`,
+                        podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
+                        quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
+                    }))
+                ]
             },
             {
-                name: "Physics",
-                lectures: Array.from({ length: 12 }, (_, i) => ({
-                    id: `lecture-${i + 1}`,
-                    name: `Lecture ${i + 1}: Quantum Mechanics`,
-                    podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
-                    quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
-                }))
+                name: "Networks Administration 2",
+                lectures: [
+                    {
+                        id: `lecture-1`,
+                        name: `Lecture 1: System Administration Overview`,
+                        podbean: `<iframe title="NA 1: System Administration Overview" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=7c26k-1963432-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=ffffff&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
+                        quiz: `<iframe src="https://abuu-abdallah.github.io/Hiwarat/Lexipedia-Cert-Verification/quiz-test.html" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    ...Array.from({ length: 11 }, (_, i) => ({
+                        id: `lecture-${i + 2}`,
+                        name: `Lecture ${i + 2}: Calculus Fundamentals`,
+                        podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
+                        quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
+                    }))
+                ]
             },
             {
-                name: "Chemistry",
-                lectures: Array.from({ length: 12 }, (_, i) => ({
-                    id: `lecture-${i + 1}`,
-                    name: `Lecture ${i + 1}: Organic Compounds`,
-                    podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
-                    quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
-                }))
+                name: "Mobile Computing",
+                lectures: [
+                    {
+                        id: `lecture-1`,
+                        name: `Lecture 1: What is Mobile Computing`,
+                        podbean: `<iframe title="MC 1: What is Mobile Computing" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=svwjs-19634a3-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
+                        quiz: `<iframe src="https://abuu-abdallah.github.io/Hiwarat/Lexipedia-Cert-Verification/quiz-test.html" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    ...Array.from({ length: 11 }, (_, i) => ({
+                        id: `lecture-${i + 2}`,
+                        name: `Lecture ${i + 2}: Calculus Fundamentals`,
+                        podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
+                        quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
+                    }))
+                ]
             },
             {
-                name: "Biology",
-                lectures: Array.from({ length: 12 }, (_, i) => ({
-                    id: `lecture-${i + 1}`,
-                    name: `Lecture ${i + 1}: Cellular Respiration`,
-                    podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
-                    quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
-                }))
-            },
-            {
-                name: "Computer Science",
-                lectures: Array.from({ length: 12 }, (_, i) => ({
-                    id: `lecture-${i + 1}`,
-                    name: `Lecture ${i + 1}: Data Structures`,
-                    podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
-                    quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
-                }))
+                name: "قضايا مهنية وأخلاقية",
+                lectures: [
+                    {
+                        id: `lecture-1`,
+                        name: `Lecture 1: قضايا مهنية وأخلاقية`,
+                        podbean: `<iframe title="PMI 1:  قضايا مهنية وأخلاقية" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=kvtmh-196350c-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
+                        quiz: `<iframe src="https://abuu-abdallah.github.io/Hiwarat/Lexipedia-Cert-Verification/quiz-test.html" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    /*{
+                        id: `lecture-2`,
+                        name: `Lecture 1: قضايا مهنية وأخلاقية`,
+                        podbean: `<iframe title="PMI 1:  قضايا مهنية وأخلاقية" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=kvtmh-196350c-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3" loading="lazy"></iframe>`,
+                        quiz: `<iframe src="https://abuu-abdallah.github.io/Hiwarat/Lexipedia-Cert-Verification/quiz-test.html" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    
+                    ...Array.from({ length: 2 }, (_, i) => ({
+                        id: `lecture-${i + 2}`,
+                        name: `Lecture ${i + 2}: Calculus Fundamentals`,
+                        podbean: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
+                        quiz: "https://www.qzzr.com/quiz/en/609a4d81-12c8-4a11-a8b2-38a3c898c6b7"
+                    })) */
+                ]
             }
         ];
 
@@ -236,6 +289,8 @@
             document.getElementById('lecture-title').textContent = lecture.name;
             document.getElementById('lecture-podbean-container').innerHTML = lecture.podbean;
             document.getElementById('quiz-frame').innerHTML = lecture.quiz;
+
+            
         };
         
         const handleLogin = () => {
@@ -243,6 +298,8 @@
             const users = {
                 'lms-password': 'LMS User',
                 'student123': 'Student',
+                '4787': 'abu abdallah',
+                '0': '0',
                 'teacher456': 'Teacher'
             };
             
@@ -279,9 +336,27 @@
                     handleLogin();
                 }
             });
+            // Full-screen button logic
+            const fullScreenBtn = document.getElementById('fullScreenQuizBtn');
+            fullScreenBtn.addEventListener('click', () => {
+                const quizIframe = document.getElementById('quizIframe');
+                if (quizIframe) {
+                    if (quizIframe.requestFullscreen) {
+                        quizIframe.requestFullscreen();
+                    } else if (quizIframe.webkitRequestFullscreen) { /* Safari */
+                        quizIframe.webkitRequestFullscreen();
+                    } else if (quizIframe.msRequestFullscreen) { /* IE11 */
+                        quizIframe.msRequestFullscreen();
+                    }
+                } else {
+                    showMessage('Quiz not loaded yet.', 3000, true);
+                }
+            });
         };
 
         window.onload = initializeLMS;
     </script>
+
+
 </body>
 </html>
