@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCI: Lecture 3 - The Computer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .option-label {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #4a5568;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            margin-bottom: 1rem;
+            color: #d1d5db; /* Lighter text color for dark theme */
+        }
+        .option-label:hover {
+            background-color: #374151;
+            border-color: #60a5fa;
+        }
+        .option-label.selected {
+            background-color: #1e3a8a;
+            border-color: #3b82f6;
+            color: #ffffff;
+        }
+        .option-label.correct {
+            background-color: #14532d;
+            border-color: #22c55e;
+            color: #ffffff;
+        }
+        .option-label.incorrect {
+            background-color: #7f1d1d;
+            border-color: #ef4444;
+            color: #ffffff;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
+
+    <main id="quiz-container" class="w-full max-w-3xl">
+        <div id="quiz-content" class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+            <div id="all-questions-container" class="space-y-8"></div>
+            <div class="text-center mt-10">
+                <button id="submit-btn" class="btn btn-primary">Submit Quiz</button>
+            </div>
+        </div>
+
+        <div id="results-screen" class="hidden bg-gray-800 p-6 rounded-2xl shadow-lg">
+            <h2 class="text-3xl font-bold text-white text-center mb-4">Quiz Completed!</h2>
+            <p id="score-text" class="text-2xl text-gray-300 text-center font-semibold mb-8"></p>
+            <div id="results-summary" class="space-y-6"></div>
+            <div class="text-center mt-8">
+                <button id="restart-btn" class="btn btn-primary">Retake Quiz</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const quizData = [
+            {
+                question: "When we interact with computers, the main objective is similar to human communication. What is this main objective?",
+                answerOptions: [
+                    {
+                        text: "To establish a cognitive model.",
+                        rationale: "Establishing a cognitive model is part of understanding the user (human) side, not the main objective of the interaction itself.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "To transfer information.",
+                        rationale: "The lecture states: 'The main objective is transferring information,' which flows back and forth between the user and the computer.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "To execute binary code.",
+                        rationale: "This is a low-level computer operation, not the high-level objective of HCI.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "To provide multimodal feedback.",
+                        rationale: "This is a feature of advanced I/O, not the core objective of all interaction.",
+                        isCorrect: false
+                    }
+                ],
+                type: 'radio'
+            },
+            {
+                question: "In the context of the I/O Model of Interaction, which of the following are the key elements? (Select all that apply)",
+                answerOptions: [
+                    {
+                        text: "The I/O devices (e.g., screen, keyboard, speaker, microphone).",
+                        rationale: "I/O devices are the core components that receive and present information.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "The physical manipulation/senses involved (e.g., typing, viewing, touching).",
+                        rationale: "The physical manipulation and senses involved are part of the I/O Model, describing how the user interacts with the devices.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "The user's long-term memory capacity.",
+                        rationale: "This is a concept from the Human side (Lecture 2), not the Computer/I/O Model.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "The central processing unit (CPU).",
+                        rationale: "The CPU is the internal processing unit, not part of the I/O interface that directly mediates interaction.",
+                        isCorrect: false
+                    }
+                ],
+                type: 'checkbox'
+            },
+            {
+                question: "Which term is used to describe the integration of multiple input and output channels, such as combining voice commands, touch gestures, and haptic feedback?",
+                answerOptions: [
+                    {
+                        text: "Context-Aware Interaction",
+                        rationale: "Context-aware interaction uses AI to sense the environment and adjust, but doesn't specifically mean combining multiple channels.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Single-Stream Processing",
+                        rationale: "This term is the opposite, referring to one channel at a time.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Multimodality",
+                        rationale: "The lecture defines 'Multimodality' as combining 'multiple I/O channels... to create a richer, more expressive form of interaction.'",
+                        isCorrect: true
+                    },
+                    {
+                        text: "Perceptual Modeling",
+                        rationale: "This relates to how the human perceives the input, not the combination of I/O channels.",
+                        isCorrect: false
+                    }
+                ],
+                type: 'radio'
+            },
+            {
+                question: "The evolution of the User Interface (UI) can be broadly categorized into three main stages. Which of the following lists these stages in the correct historical order?",
+                answerOptions: [
+                    {
+                        text: "Graphical User Interface (GUI), Command Line Interface (CLI), Natural/Multimodal UI",
+                        rationale: "The order is incorrect; CLI came first.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Command Line Interface (CLI), Graphical User Interface (GUI), Natural/Multimodal UI",
+                        rationale: "The lecture lists the evolution as: 1. Command Line Interface, 2. Graphical User Interface, 3. Natural/Multimodal UI.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "Batch Processing, CLI, GUI",
+                        rationale: "Batch Processing is a very early form of computing but is not listed as the three main UI stages.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Natural/Multimodal UI, CLI, GUI",
+                        rationale: "The order is incorrect; Natural/Multimodal UI is the current, most advanced stage.",
+                        isCorrect: false
+                    }
+                ],
+                type: 'radio'
+            },
+            {
+                question: "The evolution of computer hardware has a significant impact on HCI design. Which of the following are effects of this evolution mentioned in the lecture? (Select all that apply)",
+                answerOptions: [
+                    {
+                        text: "Faster CPUs allow for more complex and responsive UI interactions.",
+                        rationale: "Faster CPUs enable more complex UIs to run without delays.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "More memory (RAM) enables applications to handle larger datasets and keep more data immediately accessible.",
+                        rationale: "Increased memory allows for larger, more functional applications and data handling.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "Cheaper and larger storage capacity has limited the reliance on cloud services.",
+                        rationale: "Cheaper storage has made data storage easier but hasn't limited the reliance on cloud services; in fact, the two often work together.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Cheaper storage allows for the use of rich media (video, high-res images) in interfaces.",
+                        rationale: "Cheaper storage directly enables richer, more engaging interfaces with high-quality media.",
+                        isCorrect: true
+                    }
+                ],
+                type: 'checkbox'
+            },
+            {
+                question: "The final and most advanced stage of UI evolution mentioned is the 'Natural/Multimodal UI'. What is its main characteristic?",
+                answerOptions: [
+                    {
+                        text: "It requires the user to memorize precise commands and syntax.",
+                        rationale: "This is the characteristic of the Command Line Interface (CLI).",
+                        isCorrect: false
+                    },
+                    {
+                        text: "It uses only a single, large touchscreen for all interaction.",
+                        rationale: "It uses multiple channels (multimodal), not just a single touchscreen.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "It is a seamless and adaptive experience that uses various I/O devices (voice, gesture, gaze) based on the user's need and context.",
+                        rationale: "This stage allows for a seamless, adaptive experience that uses the most natural input/output channels for the situation.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "It relies heavily on the WIMP paradigm (Windows, Icons, Menus, Pointer).",
+                        rationale: "This is the characteristic of the Graphical User Interface (GUI).",
+                        isCorrect: false
+                    }
+                ],
+                type: 'radio'
+            },
+            {
+                question: "Artificial Intelligence (AI) plays a key role in the newest type of interfaces, such as smart homes or AR glasses. What primary shift does AI for Context-Aware & Proactive Interfaces cause in interaction style?",
+                answerOptions: [
+                    {
+                        text: "It focuses interaction strictly on keyboard and mouse input.",
+                        rationale: "AI-powered interfaces move away from traditional I/O devices toward natural input.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "It restricts the system to synchronous active transactions.",
+                        rationale: "AI enables complex, often asynchronous, interactions.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "It moves from command-based to anticipatory interaction.",
+                        rationale: "AI allows systems to sense context and proactively adjust, moving from the user issuing commands to the system anticipating needs.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "It primarily reduces system latency and improves CPU speed.",
+                        rationale: "This is the effect of hardware evolution, not AI's impact on interaction style.",
+                        isCorrect: false
+                    }
+                ],
+                type: 'radio'
+            },
+            {
+                question: "AI as a Bridge Between Humans & Machines represents the highest level of AI's role in HCI. What is the nature of the interaction at this level?",
+                answerOptions: [
+                    {
+                        text: "Transactional, focusing only on efficient data processing.",
+                        rationale: "The highest level moves beyond simple transactional interaction.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Dialog-like, turning computers from tools into collaborators.",
+                        rationale: "The lecture states this highest level turns computers from 'tools into collaborators' and interaction becomes 'dialog-like rather than transactional.'",
+                        isCorrect: true
+                    },
+                    {
+                        text: "Command-based, requiring precise instructions.",
+                        rationale: "This is a feature of older interfaces (CLI).",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Sensory-only, relying entirely on haptic and gaze tracking.",
+                        rationale: "It uses all modes, but the key is the collaborative relationship, not just the I/O.",
+                        isCorrect: false
+                    }
+                ],
+                type: 'radio'
+            },
+            {
+                question: "Which is a major challenge or risk associated with AI-Powered Context-Aware & Proactive Interfaces (e.g., smart homes adjusting settings automatically)?",
+                answerOptions: [
+                    {
+                        text: "It increases the cognitive load on the user.",
+                        rationale: "Proactive interfaces typically reduce user effort by anticipating needs.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "It risks being intrusive if poorly designed.",
+                        rationale: "The lecture notes that this system 'reduces user effort but risks being intrusive if poorly designed.'",
+                        isCorrect: true
+                    },
+                    {
+                        text: "It prevents the use of multimodal I/O channels.",
+                        rationale: "AI often enables more complex multimodal interaction.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "It is incompatible with modern GPU architectures.",
+                        rationale: "This is a technical hardware concern and not the primary HCI design impact mentioned.",
+                        isCorrect: false
+                    }
+                ],
+                type: 'radio'
+            },
+            {
+                question: "Which of the following describes the key function of the Motor system in the Model Human Processor (MHP)?",
+                answerOptions: [
+                    {
+                        text: "Processes and interprets information, making decisions.",
+                        rationale: "This is the function of the Cognitive system.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Takes in sensory information (like seeing, hearing, or touching).",
+                        rationale: "This is the function of the Perceptual system.",
+                        isCorrect: false
+                    },
+                    {
+                        text: "Controls physical actions (like typing, clicking, or moving a mouse).",
+                        rationale: "The Motor system is responsible for controlling physical actions.",
+                        isCorrect: true
+                    },
+                    {
+                        text: "Stores and retrieves data for long periods.",
+                        rationale: "This is the function of Long-Term Memory.",
+                        isCorrect: false
+                    }
+                ],
+                type: 'radio'
+            }
+        ];
+
+        const userAnswers = new Array(quizData.length).fill(null);
+        
+        const quizContentEl = document.getElementById('quiz-content');
+        const allQuestionsContainerEl = document.getElementById('all-questions-container');
+        const resultsScreenEl = document.getElementById('results-screen');
+        const submitBtn = document.getElementById('submit-btn');
+        const restartBtn = document.getElementById('restart-btn');
+
+        function renderAllQuestions() {
+            quizData.forEach((question, questionIndex) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'mb-8'; 
+                questionDiv.innerHTML = `
+                    <h2 class="text-xl font-semibold text-gray-300 mb-6">${questionIndex + 1}. ${question.question}</h2>
+                    <div class="options-container space-y-4" data-index="${questionIndex}"></div>
+                `;
+                
+                const optionsContainer = questionDiv.querySelector('.options-container');
+
+                question.answerOptions.forEach(option => {
+                    const inputType = question.type === 'radio' ? 'radio' : 'checkbox';
+                    const optionId = `q${questionIndex}-o${optionsContainer.children.length}`;
+                    
+                    const optionEl = document.createElement('label');
+                    optionEl.className = 'option-label flex items-center';
+                    optionEl.setAttribute('for', optionId);
+
+                    optionEl.innerHTML = `
+                        <input type="${inputType}" id="${optionId}" name="q${questionIndex}" value="${option.text}" class="mr-3">
+                        <span>${option.text}</span>
+                    `;
+                    optionsContainer.appendChild(optionEl);
+
+                    const inputEl = optionEl.querySelector('input');
+                    inputEl.addEventListener('change', (e) => handleOptionSelect(e, questionIndex));
+                });
+
+                allQuestionsContainerEl.appendChild(questionDiv);
+            });
+        }
+
+        function handleOptionSelect(e, questionIndex) {
+            const currentQuestion = quizData[questionIndex];
+            const target = e.target;
+            
+            if (currentQuestion.type === 'radio') {
+                userAnswers[questionIndex] = target.value;
+                document.querySelectorAll(`input[name="q${questionIndex}"]`).forEach(input => {
+                    input.closest('label').classList.remove('selected');
+                });
+                target.closest('label').classList.add('selected');
+            } else { // checkbox
+                if (!Array.isArray(userAnswers[questionIndex])) {
+                    userAnswers[questionIndex] = [];
+                }
+                const answerSet = new Set(userAnswers[questionIndex]);
+                if (target.checked) {
+                    answerSet.add(target.value);
+                    target.closest('label').classList.add('selected');
+                } else {
+                    answerSet.delete(target.value);
+                    target.closest('label').classList.remove('selected');
+                }
+                userAnswers[questionIndex] = Array.from(answerSet);
+            }
+        }
+
+        function showResults() {
+            quizContentEl.classList.add('hidden');
+            resultsScreenEl.classList.remove('hidden');
+
+            let score = 0;
+            const resultsSummaryEl = document.getElementById('results-summary');
+            resultsSummaryEl.innerHTML = '';
+
+            quizData.forEach((question, index) => {
+                const userAnswer = userAnswers[index];
+                let isCorrect = false;
+                const correctAnswers = question.answerOptions.filter(opt => opt.isCorrect).map(opt => opt.text);
+                
+                if (question.type === 'radio') {
+                    isCorrect = userAnswer === correctAnswers[0];
+                } else { // checkbox
+                    const userAnswerSet = new Set(userAnswer);
+                    const correctAnswerSet = new Set(correctAnswers);
+                    isCorrect = correctAnswerSet.size === userAnswerSet.size && [...correctAnswerSet].every(item => userAnswerSet.has(item));
+                }
+                
+                if (isCorrect) score++;
+
+                const resultItem = document.createElement('div');
+                resultItem.className = 'p-4 border rounded-lg';
+                resultItem.classList.add(isCorrect ? 'border-green-500' : 'border-red-500', isCorrect ? 'bg-green-800' : 'bg-red-800');
+
+                const userAnswerText = Array.isArray(userAnswer) ? userAnswer.join(', ') : userAnswer || 'Not answered';
+                const correctAnswerText = correctAnswers.join(', ');
+                
+                // Find the rationale for the correct answer
+                const correctRationale = question.answerOptions.find(opt => opt.isCorrect)?.rationale || "No rationale available.";
+
+                resultItem.innerHTML = `
+                    <p class="font-semibold text-white">${index + 1}. ${question.question}</p>
+                    <p class="text-sm mt-2 text-gray-300">Your answer: <span class="font-medium">${userAnswerText}</span></p>
+                    <p class="text-sm mt-1 text-gray-300">Correct answer: <span class="font-medium">${correctAnswerText}</span></p>
+                    <p class="text-sm mt-3 text-gray-300">Explanation: ${correctRationale}</p>
+                `;
+                resultsSummaryEl.appendChild(resultItem);
+            });
+
+            document.getElementById('score-text').textContent = `You scored ${score} out of ${quizData.length}`;
+        }
+
+        submitBtn.addEventListener('click', showResults);
+        
+        restartBtn.addEventListener('click', () => {
+            location.reload();
+        });
+
+        // Initial render
+        renderAllQuestions();
+    </script>
+</body>
+</html>
