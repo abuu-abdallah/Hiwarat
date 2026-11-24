@@ -71,8 +71,32 @@
                         podbeanUrl: `https://www.podbean.com/player-v2/?i=yah6d-19b8a56-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `hciq4-5.html`
                     },
+                    {
+                        id: `lecture-6-7`,
+                        name: `Lecture 6 & 7: The Evolution of HCI Paradigms`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=4uv7v-19bac3f-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `hciq6-7.html`
+                    },
+                    {
+                        id: `lecture-8`,
+                        name: `Lecture 8: Interaction Design Basics`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=u4smm-19c2c06-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `hciq8.html`
+                    },
+                    {
+                        id: `lecture-9`,
+                        name: `Lecture 9: HCI in the Software Process`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=rnwyt-19c2c28-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `hciq9.html`
+                    },
+                    {
+                        id: `lecture-10`,
+                        name: `Lecture 10: Design Rules`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=5fr2e-19c2c66-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `hciq10.html`
+                    },
                     /*
-                    ...Array.from({ length: 11 }, (_, i) => ({
+                    ...Array.from({ length: 11 }, (_, i) => ({ 
                         id: `lecture-${i + 2}`,
                         name: `Lecture ${i + 2}: Calculus Fundamentals`,
                         podbeanUrl: "https://www.podbean.com/media/player/7u9h2-9g9k5?from=embed&skin=1&btn-skin=135&size=200&share=1&fonts=Inter&auto=0&download=1&rtl=0",
@@ -85,27 +109,51 @@
                 lectures: [
                     {
                         id: `lecture-1`,
-                        name: `Lecture 1: Introduction to E-Commerce (1)`,
-                        podbeanUrl: `https://www.podbean.com/player-v2/?i=fpjgu-19633f7-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=ffffff&logo_link=episode_page&btn-skin=3267a3`,
+                        name: `Lecture 1: Introduction`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=m7pd5-19bcd7e-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `ecq1.html`
                     },
                     {
                         id: `lecture-2`,
-                        name: `Lecture 2: Introduction to E-Commerce (2)`,
-                        podbeanUrl: `https://www.podbean.com/player-v2/?i=itriu-196f192-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=ffffff&logo_link=episode_page&btn-skin=3267a3`,
+                        name: `Lecture 2: E-Commerce Business Models and Concepts (1)`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=9ynt6-19bcd82-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `ecq2.html`
                     },
                     {
                         id: `lecture-3`,
-                        name: `Lecture 3: E-commerce Business Models and Concept (1)`,
-                        podbeanUrl: `https://www.podbean.com/player-v2/?i=wxbdr-196f233-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=ffffff&logo_link=episode_page&btn-skin=3267a3`,
+                        name: `Lecture 3: E-commerce Business Models and Concept (2)`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=9eskw-19bce5f-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `ecq3.html`
                     },
                     {
                         id: `lecture-4`,
-                        name: `Lecture 4: E-commerce Business Models and Concept (2)`,
-                        podbeanUrl: `https://www.podbean.com/player-v2/?i=ptbie-196f249-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=ffffff&logo_link=episode_page&btn-skin=3267a3`,
+                        name: `Lecture 4: Building an E-commerce Presence (1)`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=aj2ac-19bf6bb-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `ecq4.html`
+                    },
+                    {
+                        id: `lecture-5`,
+                        name: `Lecture 5: Building an E-commerce Presence (2)`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=8t3iz-19bf72e-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `ecq5.html`
+                    },
+                    {
+                        id: `lecture-6`,
+                        name: `Lecture 6: E-commerce Security and Payment Systems (1)`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=8hz9e-19c17b0-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `ecq6.html`
+                    },
+                    {
+                        id: `lecture-7`,
+                        name: `Lecture 7: E-commerce Security and Payment Systems (2)`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=vvb69-19c2c90-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `ecq7.html`
+                    },
+                    {
+                        id: `lecture-8`,
+                        name: `Lecture 8: E-commerce Security and Payment Systems (3)`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=cjt7q-19c2cad-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `ecq8.html`
                     },
                     /*
                     ...Array.from({ length: 11 }, (_, i) => ({
@@ -146,7 +194,7 @@
                     {
                         id: `lecture-5`,
                         name: `Lecture 5: Data Integration`,
-                        podbeanUrl: `https://www.podbean.com/player-v2/?i=nzhvu-19a1047-pb&from=pb6admin&share=1&download=1&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=nzhvu-19a1047-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `dmq5.html`
                     },
                     {
@@ -160,6 +208,24 @@
                         name: `Lecture 7: Data Transformation`,
                         podbeanUrl: `https://www.podbean.com/player-v2/?i=s32u9-19b8b47-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `dmq7.html`
+                    },
+                    {
+                        id: `lecture-8`,
+                        name: `Lecture 8: Classification`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=8hmed-19babf2-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `dmq8.html`
+                    },
+                    {
+                        id: `lecture-9`,
+                        name: `Lecture 9: Evaluation`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=udebf-19c2d3d-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `dmq9.html`
+                    },
+                    {
+                        id: `lecture-10`,
+                        name: `Lecture 10: Clustering`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=aajbi-19c2d43-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `dmq10.html`
                     },
                     /*
                     ...Array.from({ length: 11 }, (_, i) => ({
@@ -209,6 +275,30 @@
                         podbeanUrl: `https://www.podbean.com/player-v2/?i=vwhie-19a30e3-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `naq6.html`
                     },
+                    {
+                        id: `lecture-7`,
+                        name: `Lecture 7: Software and Configuration Management`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=393ws-19bac5b-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `naq7.html`
+                    },
+                    {
+                        id: `lecture-8`,
+                        name: `Lecture 8: Linux Networking Basics`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=vk266-19bb2ff-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `naq8.html`
+                    },
+                    {
+                        id: `lecture-9`,
+                        name: `Lecture 9: DHCP + Samba Servers`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=iq438-19bb3be-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `naq9.html`
+                    },
+                    {
+                        id: `lecture-10`,
+                        name: `Lecture 10: NFS + Appache Web Server`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=byrbe-19c1895-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `naq10.html`
+                    },
                     /*
                     ...Array.from({ length: 11 }, (_, i) => ({
                         id: `lecture-${i + 2}`,
@@ -257,6 +347,30 @@
                         podbeanUrl: `https://www.podbean.com/player-v2/?i=pmg28-19a3d1e-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
                         quizUrl: `mcq6.html`
                     },
+                    {
+                        id: `lecture-7`,
+                        name: `Lecture 7: Wireless LANs`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=h6b7t-19bb3fa-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `mcq7.html`
+                    },
+                    {
+                        id: `lecture-8`,
+                        name: `Lecture 8: Architecture of Mobile Network`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=gywjx-19c18ca-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `mcq8.html`
+                    },
+                    {
+                        id: `lecture-9`,
+                        name: `Lecture 9: Mobile IP`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=a6twt-19c2628-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `mcq9.html`
+                    },
+                    {
+                        id: `lecture-10`,
+                        name: `Lecture 10: Mobile IP Mechanisms`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=vyzzz-19c263f-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `mcq10.html`
+                    },
                     /*
                     ...Array.from({ length: 11 }, (_, i) => ({
                         id: `lecture-${i + 2}`,
@@ -284,8 +398,44 @@
                     {
                         id: `lecture-3`,
                         name: `Lecture 3: الأخلاق المهنية وقواعد السلوك الأخلاقية`,
-                        podbeanUrl: `https://www.podbean.com/player-v2/?i=kvh5g-1980677-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=ee66t-19c32ea-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=ff6d00`,
                         quizUrl: `pmiq3.html`
+                    },
+                    {
+                        id: `lecture-4`,
+                        name: `Lecture 4: الخصوصية في مجال السايبر `,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=i9bft-19c2d62-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=3267a3`,
+                        quizUrl: `pmiq4.html`
+                    },
+                    {
+                        id: `lecture-5`,
+                        name: `Lecture 5: أمن السايبر    `,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=ccjjv-19c2df9-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=ff6d00`,
+                        quizUrl: `pmiq5.html`
+                    },
+                    {
+                        id: `lecture-6`,
+                        name: `Lecture 6: الملكية الفكرية `,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=dqme7-19c2fc1-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=ff6d00`,
+                        quizUrl: `pmiq6.html`
+                    },
+                    {
+                        id: `lecture-7`,
+                        name: `Lecture 7: تنظيم فضاء السايبر - 1`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=8k9ye-19c2fcb-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=ff6d00`,
+                        quizUrl: `pmiq7.html`
+                    },
+                    {
+                        id: `lecture-8`,
+                        name: `Lecture 8: تنظيم فضاء السايبر - 2`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=fci5a-19c3009-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=ff6d00`,
+                        quizUrl: `pmiq8.html`
+                    },
+                    {
+                        id: `lecture-9`,
+                        name: `Lecture 9: المجتمع والهوية`,
+                        podbeanUrl: `https://www.podbean.com/player-v2/?i=33qc5-19c321a-pb&from=pb6admin&share=0&download=0&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&btn-skin=ff6d00`,
+                        quizUrl: `pmiq9.html`
                     },
                     /*
                     ...Array.from({ length: 11 }, (_, i) => ({
@@ -426,7 +576,7 @@
             
             subject.lectures.forEach((lecture, index) => {
                 const card = document.createElement('div');
-                card.classList.add('p-4', 'rounded-lg', 'shadow', 'cursor-pointer', 'hover:shadow-md', 'transition-shadow', 'transition-colors', 'duration-300', 'border-2', 'border-custom-orange');
+                card.classList.add('lecture-card', 'p-4', 'rounded-lg', 'shadow', 'cursor-pointer', 'transition-shadow', 'transition-colors', 'duration-300', 'border-2', 'border-custom-orange');
                 
                 // Apply theme-specific classes for the lecture card background/text
                 const cardBaseClasses = isLight ? ['bg-white'] : ['bg-gray-900'];
@@ -541,7 +691,8 @@
                 'amani@Hiwarat': 'amani',
                 'almuiz@Hiwarat': 'almuiz',
                 'Mstra@123': '2019ITIBB0139',
-                '11423': 'Ahmed Almostafa'
+                'aHmed@hiwarat1': 'Ahmed Abdalghani',
+                '1423': 'Ahmed Almostafa'
             };
             
             if (users[password]) {
